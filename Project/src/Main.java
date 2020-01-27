@@ -1,3 +1,5 @@
+import weka.classifiers.Evaluation;
+import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -11,6 +13,7 @@ import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main{
 
@@ -29,8 +32,8 @@ public class Main{
     // get file from classpath, resources folder
     private void writeArffFile(String fileName, Instances instances) throws Exception {
         ArffSaver s= new ArffSaver();
-        s.setInstances(instances);
-        s.setFile(new File("src\\main\\resources\\"+fileName+".arff"));
+        s.setInstances(instances); // Ignore warning about reflection
+        s.setFile(new File("src\\"+fileName+".arff"));
         s.writeBatch();
     }
 
@@ -65,7 +68,7 @@ public class Main{
             } else {
                 //write out feature vector for file, with grade from its folder
                 System.out.println("    ->"+file.getName());
-                instances = parser.addTabDataToInstances(file, instances, features);
+                instances = parser.addTabDataToInstances(file, instances, features, grade);
             }
         }
 
@@ -95,20 +98,53 @@ public class Main{
         ArrayList<String> uniques = parser.generateUniqueChords(folder, new ArrayList<>());
 
         ArrayList<Attribute> attributes = new ArrayList<Attribute>();
-        ArrayList<String> classVal = new ArrayList<String>();
-        classVal.add("false");
-        classVal.add("true");
+        ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
+                "false","true"
+        ));
+        ArrayList<String> grades = new ArrayList<String>(Arrays.asList(
+                "one","two","three","four","five","six","seven","eight"
+        ));
+
         uniques.forEach(chord -> {
-                    attributes.add(new Attribute(chord.replaceAll(" ","|"),classVal));
+                    attributes.add(new Attribute(chord.replaceAll(" ","|"),booleanValues));
         });
+        attributes.add(new Attribute("grade", grades));
 
 
         Instances instances = new Instances("TestSet",attributes,0);
 
         instances = main.folderToInstances(folder, features, instances, parser);
 
+
+
+        /*
+
+        FEATURE IDEAS...
+
+        Each feature is a fret, number of chords on that fret, existance of chords on the fret
+
+
+         */
+
+        NaiveBayes nb = new NaiveBayes();
         try{
-            main.writeArffFile("test2",instances);
+            instances.setClassIndex(instances.numAttributes()-1);
+            nb.buildClassifier(instances);
+            Evaluation eval = new Evaluation(instances);
+            eval.crossValidateModel(nb,instances,10, new Random(1));
+            System.out.println("Evaluation Done!");
+            double numCorrect = eval.correct();
+            double numIncorrect = eval.incorrect();
+            double accuracy = (numCorrect/(numCorrect+numIncorrect)) * 100;
+            System.out.println("Accuracy:" + accuracy);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
+        try{
+            main.writeArffFile("testOutput",instances);
         }catch (Exception e){
             System.out.println("Error creating arff file");
         }

@@ -43,11 +43,10 @@ public class TabParser {
     }
 
 
-    public Instances addTabDataToInstances(File file, Instances instances, ArrayList<String> features){
+    public Instances addTabDataToInstances(File file, Instances instances, ArrayList<String> features, char grade){
 
         ArrayList<Event> events = this.getEvents(file);
         double instanceData[] = new double[0];
-
         if(features.contains("chordExists") || features.contains("chordCounts")){
 
             ArrayList<String> uniqueChords = new TabParser().generateUniqueChords(new File("resources/tab_files"), new ArrayList<>());
@@ -74,13 +73,17 @@ public class TabParser {
             instanceData = concatenate(instanceData,data1);
 
         }
-        System.out.println("----- Before -----");
-        System.out.println(instances);
 
+        // add grade
+        instanceData = concatenate(instanceData,new double[]{Character.getNumericValue(grade)-1});
         instances.add(new DenseInstance(1.0, instanceData));
 
-        System.out.println("----- After ----");
-        System.out.println(instances);
+//        System.out.println("----- After ----");
+//        try{
+//            System.out.println(instances);
+//        }catch(Exception e){
+//            System.out.println("here");
+//        }
 
         return instances;
     }
