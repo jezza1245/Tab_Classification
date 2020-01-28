@@ -39,6 +39,16 @@ public class Event {
                 chord+=note;
             }
         }
+
+        // Ignore trailing spaces
+        char chordChars[] = chord.toCharArray();
+        for(int i=chordChars.length-1; i>=0; i--){
+            if(chordChars[i]==' '){
+                chord = chord.substring(0,i);
+            }else{
+                break;
+            }
+        }
     }
 
 
