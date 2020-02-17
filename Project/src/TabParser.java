@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ListIterator;
 
 public class TabParser {
@@ -127,6 +128,20 @@ public class TabParser {
         //highest fret used
 
         //number_unique_chords
+        if (features.contains(Main.featureSet.NUM_UNIQUE_CHORDS)) {
+            double data[] = new double[1];
+            HashMap<String, Integer> chordsFound = new HashMap<>();
+            for (Event event : events) {
+                if (chordsFound.containsKey(event.chord)) {
+                    continue;
+                }else{
+                    chordsFound.put(event.chord, 1);
+                }
+            }
+            int numChords = chordsFound.size();
+            data[0] = numChords;
+            instanceData = concatenate(instanceData, data);
+        }
 
 
         // add grade

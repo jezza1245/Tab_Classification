@@ -1,3 +1,5 @@
+import weka.classifiers.AbstractClassifier;
+import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Attribute;
@@ -21,6 +23,7 @@ public class Main{
         FRET_COUNT,
         LARGEST_FRET_STRETCH,
         HIGHEST_FRET,
+        NUM_UNIQUE_CHORDS,
     }
     ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
             "false","true"
@@ -87,7 +90,7 @@ public class Main{
         return instances;
     }
 
-    public double getAccuracy(ArrayList<featureSet> features){
+    public double getAccuracy(AbstractClassifier classifier, ArrayList<featureSet> features){
 
         TabParser parser = new TabParser();
         ArrayList<String> uniques;
@@ -127,6 +130,7 @@ public class Main{
 
         if(features.contains(featureSet.LARGEST_FRET_STRETCH)) attributes.add(new Attribute("LargestFretStretch"));
         if(features.contains(featureSet.HIGHEST_FRET)) attributes.add(new Attribute("HighestFret"));
+        if(features.contains(featureSet.NUM_UNIQUE_CHORDS)) attributes.add(new Attribute("NumUniqueChords"));
 
         attributes.add(new Attribute("grade", grades));
 
@@ -140,12 +144,12 @@ public class Main{
         Instances instances = new Instances(instances_name,attributes,0);
         instances = new Main().folderToInstances(folder, features, instances, parser);
 
-        NaiveBayes nb = new NaiveBayes();
+
         try{
             instances.setClassIndex(instances.numAttributes()-1);
-            nb.buildClassifier(instances);
+            classifier.buildClassifier(instances);
             Evaluation eval = new Evaluation(instances);
-            eval.crossValidateModel(nb,instances,10, new Random(1));
+            eval.crossValidateModel(classifier,instances,10, new Random(1));
             System.out.println("Evaluation Done!");
             double numCorrect = eval.correct();
             double numIncorrect = eval.incorrect();
@@ -170,10 +174,23 @@ public class Main{
     public static void main(String[] args) {
         Main main = new Main();
 
+        /* Chord Shape
+            time series change between chord shape
+        */
+
+        /* number of unique chords
+
+        */
+
+        /*
+            Get grading for every bar, estimate grade based on average, mode of grades estimated uring the song
+        */
+
         ArrayList<featureSet> features;
 
-        features = new ArrayList<>(Arrays.asList(featureSet.FRET_USED));
-        double accuracy = main.getAccuracy(features);
+        features = new ArrayList<>(Arrays.asList(featureSet.NUM_UNIQUE_CHORDS));
+        NaiveBayes nb = new NaiveBayes();
+        double accuracy = main.getAccuracy(nb,features);
         System.out.println("Accuracy: for " + main.features_names(features) + " :" + accuracy);
 
 
