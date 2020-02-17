@@ -1,21 +1,33 @@
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Attribute;
-import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class Main{
+
+    File folder = new File("resources/tab_files");
+    enum featureSet {
+        CHORD_USED,
+        CHORD_COUNTS,
+        FRET_USED,
+        FRET_COUNT,
+        LARGEST_FRET_STRETCH,
+        HIGHEST_FRET,
+    }
+    ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
+            "false","true"
+    ));
+    ArrayList<String> grades = new ArrayList<String>(Arrays.asList(
+            "one","two","three","four","five","six","seven","eight"
+    ));
 
     // get file from classpath, resources folder
     private File getFileFromResources(String fileName) {
@@ -50,7 +62,7 @@ public class Main{
         return train;
     }
 
-    public Instances folderToInstances(File folder, ArrayList<String> features,Instances instances, TabParser parser){
+    public Instances folderToInstances(File folder, ArrayList<featureSet> features,Instances instances, TabParser parser){
         /*
          Take a folder of tab folders/files and traverse...
          For each file it finds, create instance and add to instances
@@ -75,56 +87,58 @@ public class Main{
         return instances;
     }
 
+    public double getAccuracy(ArrayList<featureSet> features){
 
-    public static void main(String[] args) {
-        Main main = new Main();
-        /* Current Features:
-            chordExists = {
-                each feature represents a single chord which is set to 1 if the chord exists in the
-                tab, else 0
-            }
-            chordCount = {
-            each feature represents a single chord which is set equal to the number of occurences of
-            the chord in the tab
-            }
-        */
-        // Create list of features to be included
-
-        //-------------------------  TESTING
-        ArrayList<String> features = new ArrayList<String>(Arrays.asList("chordExists"));
-
-        File folder = new File("resources/tab_files");
         TabParser parser = new TabParser();
-        ArrayList<String> uniques = parser.generateUniqueChords(folder, new ArrayList<>());
-
+        ArrayList<String> uniques;
         ArrayList<Attribute> attributes = new ArrayList<Attribute>();
-        ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
-                "false","true"
-        ));
-        ArrayList<String> grades = new ArrayList<String>(Arrays.asList(
-                "one","two","three","four","five","six","seven","eight"
-        ));
 
-        uniques.forEach(chord -> {
-                    attributes.add(new Attribute(chord.replaceAll(" ","|"),booleanValues));
-        });
+        // ##############  Set up attributes  ################################
+        if(features.contains(featureSet.CHORD_COUNTS) || features.contains(featureSet.CHORD_USED)){
+
+            uniques = parser.generateUniqueChords(folder, new ArrayList<>());
+
+            if(features.contains(featureSet.CHORD_USED)) {
+                uniques.forEach(chord -> {
+                    attributes.add(new Attribute(chord.replaceAll(" ", "|"), booleanValues));
+                });
+            }
+            if(features.contains(featureSet.CHORD_COUNTS)) {
+                uniques.forEach(chord -> {
+                    attributes.add(new Attribute(chord.replaceAll(" ", "|")));
+                });
+            }
+        }
+
+
+        if(features.contains(featureSet.FRET_COUNT) || features.contains(featureSet.FRET_USED)){
+
+            if(features.contains(featureSet.FRET_COUNT)) {
+                for (int i = (int) 'b'; i <= (int) 'p'; i++) {
+                    attributes.add(new Attribute(Character.toString((char) i)));
+                }
+            }
+            if(features.contains(featureSet.FRET_USED)) {
+                for (int i = (int) 'b'; i <= (int) 'p'; i++) {
+                    attributes.add(new Attribute(Character.toString((char) i), booleanValues));
+                }
+            }
+        }
+
+        if(features.contains(featureSet.LARGEST_FRET_STRETCH)) attributes.add(new Attribute("LargestFretStretch"));
+        if(features.contains(featureSet.HIGHEST_FRET)) attributes.add(new Attribute("HighestFret"));
+
         attributes.add(new Attribute("grade", grades));
 
+        // #################################################################
 
-        Instances instances = new Instances("TestSet",attributes,0);
-
-        instances = main.folderToInstances(folder, features, instances, parser);
-
-
-
-        /*
-
-        FEATURE IDEAS...
-
-        Each feature is a fret, number of chords on that fret, existance of chords on the fret
-
-
-         */
+        String instances_name = "";
+        for(featureSet feature: features){
+            instances_name+=feature.name();
+            instances_name+="_";
+        }
+        Instances instances = new Instances(instances_name,attributes,0);
+        instances = new Main().folderToInstances(folder, features, instances, parser);
 
         NaiveBayes nb = new NaiveBayes();
         try{
@@ -136,18 +150,31 @@ public class Main{
             double numCorrect = eval.correct();
             double numIncorrect = eval.incorrect();
             double accuracy = (numCorrect/(numCorrect+numIncorrect)) * 100;
-            System.out.println("Accuracy:" + accuracy);
+            return accuracy;
         }catch (Exception e){
             e.printStackTrace();
         }
 
+        return -1;
+    }
 
-
-        try{
-            main.writeArffFile("testOutput",instances);
-        }catch (Exception e){
-            System.out.println("Error creating arff file");
+    public String features_names(ArrayList<featureSet> features) {
+        String out = "";
+        for(featureSet feature: features){
+            out += feature.name();
+            out += "_";
         }
+        return out;
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main();
+
+        ArrayList<featureSet> features;
+
+        features = new ArrayList<>(Arrays.asList(featureSet.FRET_USED));
+        double accuracy = main.getAccuracy(features);
+        System.out.println("Accuracy: for " + main.features_names(features) + " :" + accuracy);
 
 
     }

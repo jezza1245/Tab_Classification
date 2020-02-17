@@ -43,36 +43,91 @@ public class TabParser {
     }
 
 
-    public Instances addTabDataToInstances(File file, Instances instances, ArrayList<String> features, char grade){
+    public Instances addTabDataToInstances(File file, Instances instances, ArrayList<Main.featureSet> features, char grade) {
 
         ArrayList<Event> events = this.getEvents(file);
         double instanceData[] = new double[0];
-        if(features.contains("chordExists") || features.contains("chordCounts")){
+        if (features.contains(Main.featureSet.CHORD_USED) || features.contains(Main.featureSet.CHORD_COUNTS)) { //Checked
 
             ArrayList<String> uniqueChords = new TabParser().generateUniqueChords(new File("resources/tab_files"), new ArrayList<>());
-            double data1[] = new double[uniqueChords.size()];
+            double data[] = new double[uniqueChords.size()];
 
             // Goes through events and creates feature set of binary values where 1: relevant chord exists
             // 0: relevant chord does not exist
-            for(int i = 0; i<uniqueChords.size(); i++){
+            for (int i = 0; i < uniqueChords.size(); i++) {
 
                 int count = 0;
-                for(Event event: events){
-                    if(event.chord.equals(uniqueChords.get(i))){
+                for (Event event : events) {
+                    if (event.chord.equals(uniqueChords.get(i))) {
                         count++;
                     }
                 }
 
-                if(features.contains("chordExists")){
-                    data1[i] = (count>0) ? 1 : 0;
-                }else{
-                    data1[i] = count;
+                if (features.contains(Main.featureSet.CHORD_USED)) {
+                    data[i] = (count > 0) ? 1 : 0;
+                } else {
+                    data[i] = count;
                 }
 
             }
-            instanceData = concatenate(instanceData,data1);
-
+            instanceData = concatenate(instanceData, data);
         }
+
+        // fret_use
+        if (features.contains(Main.featureSet.FRET_COUNT) || features.contains(Main.featureSet.FRET_USED)) {
+            double data[] = new double[15];
+
+            for (int i = (int) 'b'; i <= (int) 'p'; i++) {
+                int count = 0;
+                String fret = Character.toString((char) i);
+                for (Event event : events) {
+                    if (event.chord.contains(fret)) {
+                        count++;
+                    }
+                }
+                if(features.contains(Main.featureSet.FRET_USED)){
+                    data[i-98] = (count > 0) ? 1 : 0;
+                }else {
+                    data[i - 98] = count;
+                }
+            }
+            instanceData = concatenate(instanceData, data);
+        }
+
+        // fret_stretch
+        if (features.contains(Main.featureSet.LARGEST_FRET_STRETCH)) {
+            double data[] = new double[1];
+            int largestStretch = 0;
+            for (Event event : events) {
+                int lowestFret = Integer.MAX_VALUE;
+                int highestFret = 0;
+                for(char c: event.chord.toCharArray()){
+
+                    // ignore non-played and open notes
+                    if(c==' ' || c=='a') continue;
+
+                    int fret = c;
+                    if(fret < lowestFret){
+                        lowestFret = fret;
+                    }
+                    if(fret > highestFret){
+                        highestFret = fret;
+                    }
+                }
+
+                int stretch = highestFret - lowestFret;
+                if(stretch > largestStretch){
+                    largestStretch = stretch;
+                }
+            }
+            data[0] = largestStretch;
+            instanceData = concatenate(instanceData, data);
+        }
+
+        //highest fret used
+
+        //number_unique_chords
+
 
         // add grade
         instanceData = concatenate(instanceData,new double[]{Character.getNumericValue(grade)-1});
