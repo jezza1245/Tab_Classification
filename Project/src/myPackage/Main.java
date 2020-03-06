@@ -1,5 +1,6 @@
+package myPackage;
+
 import weka.classifiers.AbstractClassifier;
-import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Attribute;
@@ -14,16 +15,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main{
-
-    File folder = new File("resources/tab_files");
+    TabParser parser = new TabParser();
+    static File folder = new File("resources/tab_files");
     enum featureSet {
-        CHORD_USED,
-        CHORD_COUNTS,
-        FRET_USED,
-        FRET_COUNT,
-        LARGEST_FRET_STRETCH,
-        HIGHEST_FRET,
-        NUM_UNIQUE_CHORDS,
+        CHORD_USED, // Booleans as to wether the chord exists
+        CHORD_COUNTS, // Count of chord occurences
+        FRET_USED, // Booleans as to wether to fret was used
+        FRET_COUNT, // Count of occurences of fretted note
+        LARGEST_STRETCH, // Horizontal stretch + Vertical stretch for an individual chord
+        LARGEST_H_FRET_STRETCH, // Largest stretch from highest to lowest string in a chord
+        LARGEST_V_FRET_STRETCH, // largest stretch from highest to lowest fretted note in a chord
+        HIGHEST_FRET, // Highest fretted note
+        NUM_UNIQUE_CHORDS, // Number of unique chords played
+        //NUM_STRING_SKIPS, // total number of string skips
+                            // most string skips in a chord
+        //LARGEST_STRINGS_SKIPPED, // highest number of string skips in single chord
+        //MOST_CHORD_CHANGES_IN_BAR,
+        NUMBER_OF_BARS,
+
     }
     ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
             "false","true"
@@ -74,7 +83,7 @@ public class Main{
 
         //Find grade from last character of folder name
         char grade = folder.getName().charAt(folder.getName().length()-1);
-        System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
+        //System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
 
         for(File file : folder.listFiles()){
             if (file.isDirectory()) {
@@ -82,7 +91,7 @@ public class Main{
                 folderToInstances(file, features, instances, parser);
             } else {
                 //write out feature vector for file, with grade from its folder
-                System.out.println("    ->"+file.getName());
+                //System.out.println("    ->"+file.getName());
                 instances = parser.addTabDataToInstances(file, instances, features, grade);
             }
         }
@@ -90,47 +99,28 @@ public class Main{
         return instances;
     }
 
-    public double getAccuracy(AbstractClassifier classifier, ArrayList<featureSet> features){
+    private ArrayList<Attribute> getAttributesForFeatureset(ArrayList<Features> features){
+        ArrayList<Attribute> attributes = new ArrayList<>();
 
-        TabParser parser = new TabParser();
-        ArrayList<String> uniques;
-        ArrayList<Attribute> attributes = new ArrayList<Attribute>();
-
-        // ##############  Set up attributes  ################################
-        if(features.contains(featureSet.CHORD_COUNTS) || features.contains(featureSet.CHORD_USED)){
-
-            uniques = parser.generateUniqueChords(folder, new ArrayList<>());
-
-            if(features.contains(featureSet.CHORD_USED)) {
-                uniques.forEach(chord -> {
-                    attributes.add(new Attribute(chord.replaceAll(" ", "|"), booleanValues));
-                });
-            }
-            if(features.contains(featureSet.CHORD_COUNTS)) {
-                uniques.forEach(chord -> {
-                    attributes.add(new Attribute(chord.replaceAll(" ", "|")));
-                });
-            }
+        for(Features feature: features){
+            feature.getAttributes().forEach(featureVariable -> attributes.add(featureVariable));
         }
 
-
-        if(features.contains(featureSet.FRET_COUNT) || features.contains(featureSet.FRET_USED)){
-
-            if(features.contains(featureSet.FRET_COUNT)) {
-                for (int i = (int) 'b'; i <= (int) 'p'; i++) {
-                    attributes.add(new Attribute(Character.toString((char) i)));
-                }
-            }
-            if(features.contains(featureSet.FRET_USED)) {
-                for (int i = (int) 'b'; i <= (int) 'p'; i++) {
-                    attributes.add(new Attribute(Character.toString((char) i), booleanValues));
-                }
-            }
-        }
-
-        if(features.contains(featureSet.LARGEST_FRET_STRETCH)) attributes.add(new Attribute("LargestFretStretch"));
+        if(features.contains(featureSet.LARGEST_V_FRET_STRETCH)) attributes.add(new Attribute("VerticalFretStretch"));
+        if(features.contains(featureSet.LARGEST_H_FRET_STRETCH)) attributes.add(new Attribute("HorizontalFretStretch"));
         if(features.contains(featureSet.HIGHEST_FRET)) attributes.add(new Attribute("HighestFret"));
         if(features.contains(featureSet.NUM_UNIQUE_CHORDS)) attributes.add(new Attribute("NumUniqueChords"));
+        //if(features.contains(featureSet.NUM_STRING_SKIPS)) attributes.add(new Attribute("StringSkips"));
+        if(features.contains(featureSet.NUMBER_OF_BARS)) attributes.add(new Attribute("NUM_BARS"));
+
+        return attributes;
+    }
+
+    public double getAccuracy(AbstractClassifier classifier, ArrayList<? extends Features> features){
+
+
+        ArrayList<Attribute> attributes = new Main().getAttributesForFeatureset(features);
+
 
         attributes.add(new Attribute("grade", grades));
 
@@ -173,28 +163,38 @@ public class Main{
 
     public static void main(String[] args) {
         Main main = new Main();
+        ArrayList<? extends Features> features = new ArrayList<>();
 
-        /* Chord Shape
-            time series change between chord shape
-        */
+        // TEST SINGLE FEATURE
+        features.add(new ChordCounts());
 
-        /* number of unique chords
-
-        */
-
-        /*
-            Get grading for every bar, estimate grade based on average, mode of grades estimated uring the song
-        */
-
-        ArrayList<featureSet> features;
-
-        features = new ArrayList<>(Arrays.asList(featureSet.NUM_UNIQUE_CHORDS));
         NaiveBayes nb = new NaiveBayes();
         double accuracy = main.getAccuracy(nb,features);
-        System.out.println("Accuracy: for " + main.features_names(features) + " :" + accuracy);
+
+        // TEST ALL FEATURES
+//        for(featureSet f: myPackage.Main.featureSet.values()){
+//
+//            features = new ArrayList<>(Arrays.asList(f));
+//
+//            NaiveBayes nb = new NaiveBayes();
+//
+//            double accuracy = main.getAccuracy(nb,features);
+//            System.out.println("Accuracy: for " + f + " :" + accuracy);
+//
+//        }
+
+
+        //features = new ArrayList<>(Arrays.asList(featureSet.LARGEST_STRINGS_SKIPPED));
+//        NaiveBayes nb = new NaiveBayes();
+//        double accuracy = main.getAccuracy(nb,features);
+//        System.out.println("Accuracy: for " + main.features_names(features) + " :" + accuracy);
 
 
     }
-
-
 }
+
+// 25th Feb
+
+Difficulty per bar/bars
+
+
