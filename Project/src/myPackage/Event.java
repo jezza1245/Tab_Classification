@@ -1,3 +1,5 @@
+package myPackage;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -29,7 +31,6 @@ public class Event {
                 break;
             }
         }
-
     }
 
     private void extractChordComponents(String eventLine){
