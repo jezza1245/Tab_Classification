@@ -1,0 +1,48 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\Users\\jezba\\Desktop\\TabClassifier\\Tab_Classification\\Project\\src",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2020-02-19 16:05:01",
+            "filesum": 5,
+            "codesum": 405,
+            "commentsum": 61,
+            "blanksum": 96,
+            "filelist": [
+                {
+                    "blank": 13,
+                    "code": 42,
+                    "comment": 6,
+                    "filename": "Event.java"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 2,
+                    "filename": "FeatureExtraction.java"
+                },
+                {
+                    "blank": 37,
+                    "code": 147,
+                    "comment": 25,
+                    "filename": "Main.java"
+                },
+                {
+                    "blank": 46,
+                    "code": 216,
+                    "comment": 28,
+                    "filename": "TabParser.java"
+                },
+                {
+                    "filename": "weka.jar",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                }
+            ]
+        }
+    ]
+}

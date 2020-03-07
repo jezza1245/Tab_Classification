@@ -44,7 +44,7 @@ public class TabParser {
     }
 
 
-    public Instances addTabDataToInstances(File file, Instances instances, ArrayList<Main.featureSet> features, char grade) {
+    public Instances addTabDataToInstances(File file, Instances instances, ArrayList<? extends Features> features, char grade) {
 
         ArrayList<Bar> bars = this.getBars(file);
         double instanceData[] = new double[0];

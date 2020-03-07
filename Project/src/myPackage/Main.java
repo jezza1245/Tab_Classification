@@ -74,7 +74,7 @@ public class Main{
         return train;
     }
 
-    public Instances folderToInstances(File folder, ArrayList<featureSet> features,Instances instances, TabParser parser){
+    public Instances folderToInstances(File folder, ArrayList<? extends Features> features,Instances instances, TabParser parser){
         /*
          Take a folder of tab folders/files and traverse...
          For each file it finds, create instance and add to instances
@@ -99,27 +99,28 @@ public class Main{
         return instances;
     }
 
-    private ArrayList<Attribute> getAttributesForFeatureset(ArrayList<Features> features){
+    private ArrayList<Attribute> getAttributesForFeatureset(ArrayList<? extends Features> features){
         ArrayList<Attribute> attributes = new ArrayList<>();
 
         for(Features feature: features){
             feature.getAttributes().forEach(featureVariable -> attributes.add(featureVariable));
         }
 
-        if(features.contains(featureSet.LARGEST_V_FRET_STRETCH)) attributes.add(new Attribute("VerticalFretStretch"));
-        if(features.contains(featureSet.LARGEST_H_FRET_STRETCH)) attributes.add(new Attribute("HorizontalFretStretch"));
-        if(features.contains(featureSet.HIGHEST_FRET)) attributes.add(new Attribute("HighestFret"));
-        if(features.contains(featureSet.NUM_UNIQUE_CHORDS)) attributes.add(new Attribute("NumUniqueChords"));
-        //if(features.contains(featureSet.NUM_STRING_SKIPS)) attributes.add(new Attribute("StringSkips"));
-        if(features.contains(featureSet.NUMBER_OF_BARS)) attributes.add(new Attribute("NUM_BARS"));
+//        if(features.contains(featureSet.LARGEST_V_FRET_STRETCH)) attributes.add(new Attribute("VerticalFretStretch"));
+//        if(features.contains(featureSet.LARGEST_H_FRET_STRETCH)) attributes.add(new Attribute("HorizontalFretStretch"));
+//        if(features.contains(featureSet.HIGHEST_FRET)) attributes.add(new Attribute("HighestFret"));
+//        if(features.contains(featureSet.NUM_UNIQUE_CHORDS)) attributes.add(new Attribute("NumUniqueChords"));
+//        //if(features.contains(featureSet.NUM_STRING_SKIPS)) attributes.add(new Attribute("StringSkips"));
+//        if(features.contains(featureSet.NUMBER_OF_BARS)) attributes.add(new Attribute("NUM_BARS"));
 
         return attributes;
     }
 
     public double getAccuracy(AbstractClassifier classifier, ArrayList<? extends Features> features){
 
+        Main main = new Main();
 
-        ArrayList<Attribute> attributes = new Main().getAttributesForFeatureset(features);
+        ArrayList<Attribute> attributes = main.getAttributesForFeatureset(features);
 
 
         attributes.add(new Attribute("grade", grades));
@@ -127,12 +128,13 @@ public class Main{
         // #################################################################
 
         String instances_name = "";
-        for(featureSet feature: features){
-            instances_name+=feature.name();
+        for(Features feature: features){
+            instances_name+=feature.getName();
             instances_name+="_";
         }
+
         Instances instances = new Instances(instances_name,attributes,0);
-        instances = new Main().folderToInstances(folder, features, instances, parser);
+        instances = main.folderToInstances(folder, features, instances, new TabParser());
 
 
         try{
@@ -152,10 +154,10 @@ public class Main{
         return -1;
     }
 
-    public String features_names(ArrayList<featureSet> features) {
+    public String features_names(ArrayList<? extends Features> features) {
         String out = "";
-        for(featureSet feature: features){
-            out += feature.name();
+        for(Features feature: features){
+            out += feature.getName();
             out += "_";
         }
         return out;
@@ -193,8 +195,5 @@ public class Main{
     }
 }
 
-// 25th Feb
-
-Difficulty per bar/bars
 
 

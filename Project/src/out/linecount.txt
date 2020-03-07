@@ -1,0 +1,17 @@
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2020-02-19 16:05:01
+count workspace : c:\Users\jezba\Desktop\TabClassifier\Tab_Classification\Project\src
+total files : 5
+total code lines : 405
+total comment lines : 61
+total blank lines : 96
+
+myPackage.Event.java, code is 42, comment is 6, blank is 13.
+FeatureExtraction.java, code is 0, comment is 2, blank is 0.
+myPackage.Main.java, code is 147, comment is 25, blank is 37.
+myPackage.TabParser.java, code is 216, comment is 28, blank is 46.
+weka.jar, it is a binary file.
+===============================================================================

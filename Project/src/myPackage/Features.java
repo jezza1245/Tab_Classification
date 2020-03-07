@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 interface Features {
+    String getName();
     ArrayList<Attribute> getAttributes();
     ArrayList<Double> getFeatureData(Song song);
 }
@@ -13,6 +14,11 @@ interface Features {
 class ChordCounts implements Features{
 
     ArrayList<String> uniques = new TabParser().generateUniqueChords(Main.folder, new ArrayList<>());
+
+    @Override
+    public String getName(){
+        return "chordCounts";
+    }
 
     @Override
     public ArrayList<Attribute> getAttributes(){
