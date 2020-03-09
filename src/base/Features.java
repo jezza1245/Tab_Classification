@@ -20,7 +20,7 @@ class ChordCounts implements Feature{
 
         // For every unique chord in TabParser, add a new attribute for that chord
         TabParser.uniques.forEach( (chord,value) ->
-                attributes.add(new Attribute(chord.replaceAll(" ", "|"))) // Replace ' ' with '|' for readability
+                attributes.add(new Attribute(chord.replaceAll(" ", "|")+"_count")) // Replace ' ' with '|' for readability
         );
 
         return attributes;
@@ -69,7 +69,7 @@ class ChordExists implements Feature{
 
         // For every unique chord in TabParser, add a new attribute for that chord
         TabParser.uniques.forEach( (chord,value) ->
-                attributes.add(new Attribute(chord.replaceAll(" ", "|"))) // Replace ' ' with '|' for readability
+                attributes.add(new Attribute(chord.replaceAll(" ", "|")+"_exists",Main.booleanValues)) // Replace ' ' with '|' for readability
         );
 
         return attributes;
@@ -93,8 +93,11 @@ class ChordExists implements Feature{
         double[] dataOut = new double[counts.size()]; // create new empty double array to return
         int index = 0;
 
-        // for every unique chord, copy its count to array
-        counts.forEach((chord,count) -> dataOut[index] = count);
+        Iterator it = counts.keySet().iterator();
+        while(it.hasNext()){
+            Object chord = it.next();
+            dataOut[index++]=counts.get(chord);
+        }
 
         return dataOut;
 
