@@ -131,3 +131,41 @@ class NumberUniqueChords implements Feature{
         return new double[]{numChords};
     }
 }
+
+class HighestFret implements Feature{
+
+    @Override
+    public String getName() {
+        return "HighestFret";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return new ArrayList<Attribute>(Arrays.asList(new Attribute("HighestFret")));
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+
+        Iterator<Event> iterator = song.getEventIterator();
+        int highestFret = 0;
+
+        while(iterator.hasNext()) { //While song has another event/chord
+
+            Event event = iterator.next();
+
+            for(char c: event.chord.toCharArray()){
+                //ignore non-played and open notes
+                if (c == ' ' || c == 'a') {
+                    continue;
+                }
+                if (c > highestFret) {
+                    highestFret = c; // If new highest fret, update
+                }
+            }
+
+        }
+
+        return new double[]{highestFret - 97}; // -97 so 'b' (first fret) is 1 and not 98 (character value)
+    }
+}

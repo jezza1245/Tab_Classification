@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class TabParser {
 
@@ -40,13 +41,16 @@ public class TabParser {
             if (file.isDirectory()) {
                 generateUniqueChords(file, uniques);
             } else if (file.getName().endsWith(".tab")){
-                ArrayList<Event> events = TabParser.getEvents(file);
-                events.forEach((event -> {
+                Song song = new Song(file);
+                Iterator songIterator = song.getEventIterator();
+
+                while(songIterator.hasNext()){
+                    Event event = (Event)songIterator.next();
                     String chord = event.chord;
                     if(chord.length() > 0 && !uniques.contains(chord)){
                         uniques.add(chord);
                     }
-                }));
+                }
             }
         }
 
@@ -56,9 +60,7 @@ public class TabParser {
 
     public static Instances addTabDataToInstances(File file, Instances instances, ArrayList<Feature> features, char grade) {
 
-        ArrayList<Bar> bars = getBars(file);
         double instanceData[] = new double[0];
-        Song song = new Song(file);
 
         for(Feature feature: features){
             double[] newData = feature.getFeatureData(new Song(file));
@@ -197,23 +199,7 @@ public class TabParser {
 //            instanceData = concatenate(instanceData, data);
 //        }
 //
-//        //number_unique_chords
-//        if (features.contains(Main.featureSet.NUM_UNIQUE_CHORDS)) {
-//            double data[] = new double[1];
-//            HashMap<String, Integer> chordsFound = new HashMap<>();
-//            for (Bar b : bars) {
-//                for (Event event : b.getEvents()) {
-//                    if (chordsFound.containsKey(event.chord)) {
-//                        continue;
-//                    } else {
-//                        chordsFound.put(event.chord, 1);
-//                    }
-//                }
-//            }
-//            int numChords = chordsFound.size();
-//            data[0] = numChords;
-//            instanceData = concatenate(instanceData, data);
-//        }
+//
 
         // string skips
 //        if(features.contains(myPackage.Main.featureSet.LARGEST_STRINGS_SKIPPED)){
@@ -241,12 +227,6 @@ public class TabParser {
         return instances;
     }
 
-    private static boolean onlyContainsSpaces(String line){
-        for(char c: line.toCharArray()){
-            if(c != ' ') return false;
-        }
-        return true;
-    }
 
     public static ArrayList<Bar> getBars(File file){
         ArrayList<Bar> bars = new ArrayList<>();
@@ -277,7 +257,7 @@ public class TabParser {
                 }
 
                 //EMPTY LINE -> NEW TAB LINE
-                if(line.length()==0 || onlyContainsSpaces(line)) {
+                if(line.length()==0) {
                     line = br.readLine();
                     continue;
                 }
@@ -345,85 +325,85 @@ public class TabParser {
         return bars;
     }
 
-    public static ArrayList<Event> getEvents(File file){
-        ArrayList<Event> events = new ArrayList<Event>();
-
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(file));
-
-            /*
-                Process header information such as title and style data
-                (probably not useful)
-            */
-            String line = br.readLine();
-            //WHILE can get a line
-            while(line!=null){
-                // ############## Miscellanous #################
-
-                // $ -> styling option
-                if(line.startsWith("$")){
-                    line = br.readLine();
-                    continue;                }
-
-                // { -> Printed title information
-                else if(line.startsWith("{")){
-                    line = br.readLine();
-                    continue;
-                }
-
-                //EMPTY LINE -> NEW TAB LINE
-                if(line.length()==0) {
-                    line = br.readLine();
-                    continue;
-                }
-
-                //e -> END OF FILE
-                else if(line.startsWith("e")) {
-                    break;
-                }
-
-                //% -> COMMENT
-                else if(line.startsWith("%")) {
-                    line = br.readLine();
-                    continue;
-                }
-
-                //. -> Column of dots
-                else if(line.startsWith(".")) {
-                    line = br.readLine();
-                    continue;
-                }
-
-                //b or B -> bar
-                else if(line.startsWith("b") || line.startsWith("B")) {
-                    line = br.readLine();
-                    continue;
-                }
-
-                //Time Signature (C,c,Sx-y)
-                else if(line.startsWith("C") || line.startsWith("c") || line.startsWith("S")) {
-                    line = br.readLine();
-                    continue;
-                }
-
-                // indent
-                else if(line.startsWith("i")){
-                    line = br.readLine();
-                    continue;
-                }
-                // ################################################################################################
-
-                Event event = new Event(line);
-                events.add(event);
-
-                line = br.readLine();
-            }
-        }catch(Exception e){
-            System.out.println("ERROR PARSING TAB");
-        }
-
-        return events;
-    }
+//    public static ArrayList<Event> getEvents(File file){
+//        ArrayList<Event> events = new ArrayList<Event>();
+//
+//        try{
+//            BufferedReader br = new BufferedReader(new FileReader(file));
+//
+//            /*
+//                Process header information such as title and style data
+//                (probably not useful)
+//            */
+//            String line = br.readLine();
+//            //WHILE can get a line
+//            while(line!=null){
+//                // ############## Miscellanous #################
+//
+//                // $ -> styling option
+//                if(line.startsWith("$")){
+//                    line = br.readLine();
+//                    continue;                }
+//
+//                // { -> Printed title information
+//                else if(line.startsWith("{")){
+//                    line = br.readLine();
+//                    continue;
+//                }
+//
+//                //EMPTY LINE -> NEW TAB LINE
+//                if(line.length()==0) {
+//                    line = br.readLine();
+//                    continue;
+//                }
+//
+//                //e -> END OF FILE
+//                else if(line.startsWith("e")) {
+//                    break;
+//                }
+//
+//                //% -> COMMENT
+//                else if(line.startsWith("%")) {
+//                    line = br.readLine();
+//                    continue;
+//                }
+//
+//                //. -> Column of dots
+//                else if(line.startsWith(".")) {
+//                    line = br.readLine();
+//                    continue;
+//                }
+//
+//                //b or B -> bar
+//                else if(line.startsWith("b") || line.startsWith("B")) {
+//                    line = br.readLine();
+//                    continue;
+//                }
+//
+//                //Time Signature (C,c,Sx-y)
+//                else if(line.startsWith("C") || line.startsWith("c") || line.startsWith("S")) {
+//                    line = br.readLine();
+//                    continue;
+//                }
+//
+//                // indent
+//                else if(line.startsWith("i")){
+//                    line = br.readLine();
+//                    continue;
+//                }
+//                // ################################################################################################
+//
+//                Event event = new Event(line);
+//                events.add(event);
+//
+//                line = br.readLine();
+//            }
+//        }catch(Exception e){
+//            System.out.println("ERROR PARSING TAB");
+//        }
+//
+//        return events;
+//    }
 
     public static void main(String[] args) {
 

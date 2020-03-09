@@ -71,7 +71,7 @@ public class Main{
 
         //Find grade from last character of folder name
         char grade = folder.getName().charAt(folder.getName().length()-1);
-        //System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
+        System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
 
         for(File file : folder.listFiles()){
             if (file.isDirectory()) {
@@ -80,6 +80,7 @@ public class Main{
             } else {
                 //write out feature vector for file, with grade from its folder
                 //System.out.println("    ->"+file.getName());
+                System.out.println("  "+file.getName());
                 instances = TabParser.addTabDataToInstances(file, instances, features, grade);
             }
         }
