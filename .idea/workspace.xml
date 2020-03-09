@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="635a7edf-c70d-4fda-9a63-2d7ee1d42a21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade1/1_Calleno.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade1/3_TheBagpipes.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade1/5_TheMotlye.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade1/calleno.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade1/the_bagpipes.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade1/the_owld_man.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/11_RobinReddocke.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/1_HastuMichGenumen.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/29_Trenchmore.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/2_UnserKoechinKanAussDerMassenKochenWol.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/33_LightlieLoveLadies.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/35_TheEarleOfDarbyesCaraunta - Copy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/6_EinGuterHofftantz.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/7_SellingersRound.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade2/9_TheBlacksmith.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/13_Larouse.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/15_BellaGioiosa.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/17_Baloo.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/19_PasseVelours.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/21_ElsleinLiebstesElsleinMein.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/21_IlControDell'Orco.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/23_PassamezzoD'Italie.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/25_QuadroPavinGaliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/31_ElBataino.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/37_BlameNotMyLute.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/39_TienteAlora.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/41_TuAnderaiColBocchalon.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/45_TantarraChromartello.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/47_CansonEnglesa.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/49_GreeneSleves.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/51_AGalliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/53_WillYeGoWalkeTheWoodSoWilde.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/55_ThePassemezePavin.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/57_LostIsMyLyberty.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/61_orlando-sleepeth.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/62_fortune_my_foe.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/79_what_if_a_day.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/80_a_coy_toy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/83_robert_johnson_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/84_haselwood_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade3/lesson_15_neusidler_800px.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/100_coranto.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/20_dowlands_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/21_candishs_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/22_galliard_1.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/27_TheDivisionOfRogeroBefore.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/43_LaCastalda.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/43c_lady_richs_galliard_1.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/50_mistriss_whites_choyce.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/52_mrs_nichols_almain.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/55_mrs_winters_jump.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/56_mrs_whites_nothing.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/63_complaint.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/65_lord_strangs_march.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/78_untitled.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/81_tarletons_jig.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade4/99_midnight.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/16_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/26_lachrimae_galliard_in_G.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/27_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/30_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/32_mrs_vaux_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/35_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/39_round_battle_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/42_can_she_excuse.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/48_lady_laitons_almain.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/49_an_almain.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/60_come_again_solo.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/77_mrs_norrishes_delight.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/90_frogg_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/92_galliard_francis_cutting.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade5/97_queens_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/01a_fantasy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/04_farewell_an_in_nomine.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/09_semper_dowland_semper_dolens.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/10_solus_cum_sola.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/12_dr_cases_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/13a_dowlands_adew.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/15_lachrimae_in_G.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/17a_lady_russels_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/23a_frogg_galliard_2.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/24_awake_sweet_love_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/25_dowland_melancholy_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/29_giles_hobies_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/31_walsingham_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/41_queen_elizabeths_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/45_lady_cliftons_spirit.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/46_lachrimae_galliard_8C.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/58_the_shoemakers_wife.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/59_tarletons_resurrection.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/65_lord_strangs_march.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/70_robin.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/74_a_fancy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/75_a_dream.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/76_a_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/82_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/91_suzannah_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/95_la_mia_barbara.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/96_an_almand.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade6/98_praeludium.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/05_a_fancy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/08_dowland_pipers_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/11_mrs_brigide_fleetwoods_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/14_john_langtons_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/18_pavan.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/19_piper_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/23a_frogg_galliard_2.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/28_galliard_upon_bachelor.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/33_mr_langtons_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/34_mignarda_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/38_lord_viscount_lisles_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/42b_earl_of_essex_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/44a_earl_of_derbys_galliard.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/53_mrs_cliftons_almain.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/54_lady_hunsdons_puff.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/64_go_from_my_window.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/68_aloe.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/89_can_she_excuse_galliard_2.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade7/94_pavana_johan_douland_orig.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/02_forlorne_hope.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/03_farewell_fancy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/14a_langton_pavane.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/40_king_of_denmarks_galliard_long.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/47_sir_john_smiths_almaine.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/67b_walsingham.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/69_loth_to_depart.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/71_fantasy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/72_a_fancy.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tab_files/grade8/73_fancy.tab" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/base/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+              <folding>
+                <element signature="method#concatenate#0;class#TabParser#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Features.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Song.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Feature.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Bar.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/base/Bar.java" />
+        <option value="$PROJECT_DIR$/src/base/Song.java" />
+        <option value="$PROJECT_DIR$/src/base/Feature.java" />
+        <option value="$PROJECT_DIR$/src/base/TabParser.java" />
+        <option value="$PROJECT_DIR$/src/base/Features.java" />
+        <option value="$PROJECT_DIR$/src/base/Main.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="y" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="Features.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FeatureSpace" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jezba\Desktop\TabClassifier\Tab_Classification\resources\tab_files" />
+      <recent name="C:\Users\jezba\Desktop\Dissertation\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jezba\Desktop\TabClassifier\Tab_Classification\resources" />
+      <recent name="C:\Users\jezba\Desktop\Dissertation\src\base" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="base.Main" />
+      <module name="Dissertation" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TabParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="base.TabParser" />
+      <module name="Dissertation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TabParser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="635a7edf-c70d-4fda-9a63-2d7ee1d42a21" name="Default Changelist" comment="" />
+      <created>1583669532402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583669532402</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84388185" visible="true" weight="0.12483221" />
+      <window_info id="Structure" order="1" sideWeight="0.15611814" side_tool="true" weight="0.12348993" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Main.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="TabParser.uniques" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/calleno.tab">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade5/16_pavan.tab">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Song.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Feature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Bar.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="method#concatenate#0;class#TabParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Features.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chordCounts_.arff">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21695" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Dissertation</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
