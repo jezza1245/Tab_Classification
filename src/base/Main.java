@@ -168,8 +168,7 @@ public class Main{
         // TEST SINGLE FEATURE
         features.addAll(
                 Arrays.asList(
-                        new ChordCounts(),
-                        new ChordExists()
+                        new ChordCounts()
                 ));
 
         Instances instances = Main.getInstances(folder,features);

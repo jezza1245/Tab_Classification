@@ -2,9 +2,7 @@ package base;
 
 import weka.core.Attribute;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 class ChordCounts implements Feature{
 
@@ -103,4 +101,33 @@ class ChordExists implements Feature{
 
     }
 
+}
+
+class NumberUniqueChords implements Feature{
+
+    @Override
+    public String getName() {
+        return "NumUniqueChords";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return new ArrayList<Attribute>(Arrays.asList(new Attribute("NumUniqueChords")));
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+
+        Iterator<Event> iterator = song.getEventIterator();
+        HashSet<String> uniques = new HashSet<>();
+
+        while(iterator.hasNext()) { //While song has another event/chord
+            Event event = iterator.next();
+            uniques.add(event.chord); //If not currently in set, it will be added
+        }
+
+        int numChords = uniques.size();
+
+        return new double[]{numChords};
+    }
 }

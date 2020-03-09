@@ -43,7 +43,7 @@ public class TabParser {
                 ArrayList<Event> events = TabParser.getEvents(file);
                 events.forEach((event -> {
                     String chord = event.chord;
-                    if(!uniques.contains(chord)){
+                    if(chord.length() > 0 && !uniques.contains(chord)){
                         uniques.add(chord);
                     }
                 }));
@@ -241,6 +241,13 @@ public class TabParser {
         return instances;
     }
 
+    private static boolean onlyContainsSpaces(String line){
+        for(char c: line.toCharArray()){
+            if(c != ' ') return false;
+        }
+        return true;
+    }
+
     public static ArrayList<Bar> getBars(File file){
         ArrayList<Bar> bars = new ArrayList<>();
 
@@ -270,7 +277,7 @@ public class TabParser {
                 }
 
                 //EMPTY LINE -> NEW TAB LINE
-                if(line.length()==0) {
+                if(line.length()==0 || onlyContainsSpaces(line)) {
                     line = br.readLine();
                     continue;
                 }

@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="635a7edf-c70d-4fda-9a63-2d7ee1d42a21" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/ChordCounts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/ChordCounts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/ChordExists.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/ChordExists.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Main$featureSet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/chordCounts_.arff" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/chordCounts_.arff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/chordCounts_.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/chordExists_.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/lesson_15_neusidler_800px.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Features.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/TabParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/TabParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chordCounts_.arff" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/base/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="165" column="29" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
+            <state relative-caret-position="226">
+              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,20 +39,46 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/base/Features.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/tab_files/grade7/33_mr_langtons_galliard.tab">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="87">
+              <caret line="476" column="7" selection-start-line="476" selection-start-column="7" selection-end-line="476" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/base/Song.java">
+        <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="320">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+              <folding>
+                <element signature="method#concatenate#0;class#TabParser#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-520">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Features.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+              <folding>
+                <element signature="class#ChordCounts#0" />
+                <element signature="e#3404#3405#0" expanded="true" />
+                <element signature="e#3431#3432#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,10 +113,10 @@
         <option value="$PROJECT_DIR$/src/base/Bar.java" />
         <option value="$PROJECT_DIR$/src/base/Song.java" />
         <option value="$PROJECT_DIR$/src/base/Feature.java" />
-        <option value="$PROJECT_DIR$/src/base/TabParser.java" />
+        <option value="$PROJECT_DIR$/src/chordCounts_chordExists_.arff" />
         <option value="$PROJECT_DIR$/src/base/Main.java" />
         <option value="$PROJECT_DIR$/src/base/Features.java" />
-        <option value="$PROJECT_DIR$/src/chordCounts_chordExists_.arff" />
+        <option value="$PROJECT_DIR$/src/base/TabParser.java" />
       </list>
     </option>
   </component>
@@ -97,11 +127,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="950" />
-    <option name="y" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -115,11 +144,6 @@
             <path>
               <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
@@ -220,7 +244,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.84388185" visible="true" weight="0.12483221" />
@@ -252,6 +276,30 @@
     </layout>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>63</line>
+          <properties class="base.ChordExists" method="getAttributes">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="TabParser.uniques" />
@@ -291,21 +339,6 @@
         <state relative-caret-position="-21504" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chordCounts_.arff">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="420" column="27" selection-start-line="420" selection-start-column="23" selection-end-line="420" selection-end-column="27" />
-          <folding>
-            <element signature="method#concatenate#0;class#TabParser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chordCounts_chordExists_.arff">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-592">
@@ -313,20 +346,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Main.java">
+    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/1_Calleno.tab">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NumUniqueChords_.arff">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="165" column="29" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-520">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/3_TheBagpipes.tab">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade3/lesson_15_neusidler_800px.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade7/33_mr_langtons_galliard.tab">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="476" column="7" selection-start-line="476" selection-start-column="7" selection-end-line="476" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/base/Features.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="252">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="class#ChordCounts#0" />
+            <element signature="e#3404#3405#0" expanded="true" />
+            <element signature="e#3431#3432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="method#concatenate#0;class#TabParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chordCounts_.arff">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3344">
+          <caret line="209" column="17" lean-forward="true" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
