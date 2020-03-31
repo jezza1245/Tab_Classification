@@ -11,6 +11,9 @@ public class Bar {
     }
 
     public void addEvent(Event e){ events.add(e); }
+    public int size(){
+        return events.size();
+    }
     public ArrayList<Event> getEvents(){
         return events;
     }
