@@ -10,7 +10,7 @@ import weka.core.converters.ArffSaver;
 
 import java.io.File;
 import java.io.FileReader;
-import java.lang.reflect.Array;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -18,19 +18,25 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main{
-
-    public static ArrayList<Attribute> attributes = new ArrayList<>();
-
     static File folder = new File("resources/tab_files");
-
+//    enum featureSet {
+//        CHORD_USED, // Booleans as to wether the chord exists
+//        CHORD_COUNTS, // Count of chord occurences
+//        FRET_USED, // Booleans as to wether to fret was used
+//        FRET_COUNT, // Count of occurences of fretted note
+//        LARGEST_STRETCH, // Horizontal stretch + Vertical stretch for an individual chord
+//        LARGEST_H_FRET_STRETCH, // Largest stretch from highest to lowest string in a chord
+//        LARGEST_V_FRET_STRETCH, // largest stretch from highest to lowest fretted note in a chord
+//        HIGHEST_FRET, // Highest fretted note
+//        NUM_UNIQUE_CHORDS, // Number of unique chords played
+//        //NUM_STRING_SKIPS, // total number of string skips
+//        // most string skips in a chord
+//        //LARGEST_STRINGS_SKIPPED, // highest number of string skips in single chord
+//        //MOST_CHORD_CHANGES_IN_BAR,
+//        NUMBER_OF_BARS,
+//
+//    }
     final static ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
-=======
-    static File folder = new File("resources/tab_files");
-    
-    TabParser parser = new TabParser();
-
-    final static ArrayList<String> booleanValues = new ArrayList<>(Arrays.asList(
->>>>>>> Stashed changes
             "false","true"
     ));
     final static ArrayList<String> grades = new ArrayList<>(Arrays.asList(
@@ -121,6 +127,7 @@ public class Main{
             return null;
         }
 
+        return null;
     }
 
     public static double getAccuracy(Evaluation evaluation){
@@ -142,29 +149,10 @@ public class Main{
         return (correct/(double)test.numInstances());
     }
 
-    public static Instances folderToInstances(File folder, ArrayList<Feature> features, Instances instances){
-        /*
-         Take a folder of tab folders/files and traverse...
-         For each file it finds, create instance and add to instances
-        */
-        //Find grade from last character of folder name
-        int grade = Character.getNumericValue(folder.getName().charAt(folder.getName().length()-1));
-        System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
+    public static Instances getInstances(File file, ArrayList<Feature> features){
 
-        for(File file : folder.listFiles()){
-            if (file.isDirectory()) {
-                // recursive call on new found directory
-                folderToInstances(file, features, instances);
-            } else {
-                //write out feature vector for file, with grade from its folder
-                //System.out.println("    ->"+file.getName());
-                System.out.println("  "+file.getName());
-                instances = TabParser.songToInstances(new Song(file), instances, features, grade);
-            }
-        }
+        ArrayList<Attribute> attributes = getAttributesForFeatureset(features);
 
-        return instances;
-    }
 
         attributes.add(new Attribute("grade", grades));
 
@@ -198,14 +186,9 @@ public class Main{
         Instances instances = new Instances(instances_name,attributes,0);
         instances = folderToInstances(file, features, instances);
 
-        instances = TabParser.songToInstances(song, instances, features, 0);
 
-        return instances.get(0);
-    }
 
-    public static Instance fileToInstance(File file, ArrayList<Feature> features){
 
-        // #################################################################
 
         return instances;
     }
@@ -217,6 +200,46 @@ public class Main{
             out += "_";
         }
         return out;
+    }
+
+    public static double testTrainAccuracy(Classifier c, Instances train, Instances test){
+        double acc = -1;
+        train.setClassIndex(train.numAttributes()-1);
+        test.setClassIndex(test.numAttributes()-1);
+
+
+        try{
+            c.buildClassifier(train);
+            Enumeration<Instance> instanceEnumeration = test.enumerateInstances();
+
+            int numCorrect = 0;
+            while(instanceEnumeration.hasMoreElements()){
+                Instance next = instanceEnumeration.nextElement();
+                double actual = next.classValue();
+                double prediction = c.classifyInstance(next);
+                if(actual == prediction) numCorrect++;
+            }
+
+            acc = numCorrect/test.numInstances();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return acc;
+    }
+
+    public static Instances[] splitData(Instances all, double proportion){
+
+        Instances split[] = new Instances[2];
+        int totalInstances = all.numInstances();
+
+        int splitAt = (int) (proportion*totalInstances);
+
+        all.randomize(new Random(42));
+        split[0] = new Instances(all, 0, splitAt);
+        split[1] = new Instances(all, splitAt, totalInstances-splitAt);
+
+        return split;
     }
 
     public static void main(String[] args) {
@@ -231,7 +254,17 @@ public class Main{
                         new ChordExists()
                 ));
 
-        Instances instances = Main.getInstances(folder,features);
+        Main main = new Main();
+        if(features.contains(new ChordCounts())){
+            main.parser.generateUniqueChords();
+        }
+
+
+
+        Instances instances = main.getInstances(folder,features);
+        Instances split[] = splitData(instances,0.5);
+
+
 
         try{
             nb.buildClassifier(split[0]);

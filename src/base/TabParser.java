@@ -46,16 +46,70 @@ public class TabParser {
     }
 
 
-    public static Instances songToInstances(Song tab, Instances instances, ArrayList<Feature> features, char grade) {
+    public static Instances addTabDataToInstances(File file, Instances instances, ArrayList<Feature> features, char grade) {
 
         double instanceData[] = new double[0];
 
         for(Feature feature: features){
-            double[] newData = feature.getFeatureData(tab);
+            double[] newData = feature.getFeatureData(new Song(file));
             instanceData = concatenate(instanceData,newData);
         }
 
-
+//        if (features.contains(Main.featureSet.CHORD_USED) || features.contains(Main.featureSet.CHORD_COUNTS)) { //Checked
+//
+//            ArrayList<String> uniqueChords = new TabParser().generateUniqueChords(new File("resources/tab_files"), new ArrayList<>());
+//            double data[] = new double[uniqueChords.size()];
+//
+//            // Goes through events and creates feature set of binary values where 1: relevant chord exists
+//            // 0: relevant chord does not exist
+//            for (int i = 0; i < uniqueChords.size(); i++) {
+//
+//                int count = 0;
+//                for (Bar b : bars){
+//                    for (Event event : b.getEvents()) {
+//                        if (event.chord.equals(uniqueChords.get(i))) {
+//                            count++;
+//                        }
+//                    }
+//                }
+//
+//                if (features.contains(Main.featureSet.CHORD_USED)) {
+//                    data[i] = (count > 0) ? 1 : 0;
+//                } else {
+//                    data[i] = count;
+//                }
+//
+//            }
+//            instanceData = concatenate(instanceData, data);
+//        }
+//
+//        // fret_use
+//        if (features.contains(Main.featureSet.FRET_COUNT) || features.contains(Main.featureSet.FRET_USED)) {
+//            double data[] = new double[15];
+//
+//            for (int i = (int) 'b'; i <= (int) 'p'; i++) {
+//                int count = 0;
+//                String fret = Character.toString((char) i);
+//                for (Bar b : bars) {
+//                    for (Event event : b.getEvents()) {
+//                        if (event.chord.contains(fret)) {
+//                            count++;
+//                        }
+//                    }
+//                }
+//                if(features.contains(Main.featureSet.FRET_USED)){
+//                    data[i-98] = (count > 0) ? 1 : 0;
+//                }else {
+//                    data[i - 98] = count;
+//                }
+//            }
+//            instanceData = concatenate(instanceData, data);
+//        }
+//
+//        // fret_stretch
+//        if(features.contains(Main.featureSet.LARGEST_STRETCH)){
+//            //TODO
+//        }
 //        if (features.contains(Main.featureSet.LARGEST_V_FRET_STRETCH)) {
 //            double data[] = new double[1];
 //            int largestStretch = 0;
@@ -86,7 +140,6 @@ public class TabParser {
 //            data[0] = largestStretch;
 //            instanceData = concatenate(instanceData, data);
 //        }
-
 //        if(features.contains(Main.featureSet.LARGEST_H_FRET_STRETCH)){
 //            double data[] = new double[1];
 //            int largestStretch = 0;
@@ -114,7 +167,27 @@ public class TabParser {
 //            data[0] = largestStretch;
 //            instanceData = concatenate(instanceData, data);
 //        }
-
+//
+//        //highest fret used
+//        if(features.contains(Main.featureSet.HIGHEST_FRET)){
+//            double data[] = new double[1];
+//            int highestFret = -1;
+//            for (Bar b : bars) {
+//                for (Event event : b.getEvents()) {
+//                    for (char c : event.chord.toCharArray()) {
+//                        // ignore non-played and open notes
+//                        if (c == ' ' || c == 'a') {
+//                            continue;
+//                        }
+//                        if (c > highestFret) highestFret = c;
+//                    }
+//                }
+//            }
+//            data[0] = highestFret - 97;
+//            instanceData = concatenate(instanceData, data);
+//        }
+//
+//
 
         // string skips
 //        if(features.contains(myPackage.Main.featureSet.LARGEST_STRINGS_SKIPPED)){
@@ -135,12 +208,6 @@ public class TabParser {
 //            instanceData = concatenate(instanceData, data);
 //        }
 
-=======
-            double[] newData = feature.getFeatureData(tab);
-            instanceData = this.concatenate(instanceData,newData);
-        }
-
->>>>>>> Stashed changes
         // add grade
         double gradeData[] = new double[1];
 
