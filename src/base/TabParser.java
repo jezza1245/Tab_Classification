@@ -10,21 +10,14 @@ import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class TabParser {
 
-    final static HashMap<String,Integer> uniques = new HashMap<>();
+    final static HashSet<String> uniques = new HashSet<>();
 
-    static
-    {
-        ArrayList<String> uniqueChords = new ArrayList<>();
-        uniqueChords = generateUniqueChords(Main.folder, uniqueChords);
-        for(int i = 0; i < uniqueChords.size(); i++) uniques.put(uniqueChords.get(i), 0);
-    }
-
-
-    public static double[] concatenate(double a[], double b[]) {
+    private double[] concatenate(double a[], double b[]) {
         int aLen = a.length;
         int bLen = b.length;
 
@@ -36,21 +29,15 @@ public class TabParser {
         return c;
     }
 
-    public static ArrayList<String> generateUniqueChords(File folder, ArrayList<String> uniques){
+    public ArrayList<String> generateUniqueChords(Song[] songs, ArrayList<String> uniques){
+        for(Song song: songs) {
+            Iterator eventIterator = song.getEventIterator();
 
-        for(File file : folder.listFiles()){
-            if (file.isDirectory()) {
-                generateUniqueChords(file, uniques);
-            } else if (file.getName().endsWith(".tab")){
-                Song song = new Song(file);
-                Iterator songIterator = song.getEventIterator();
-
-                while(songIterator.hasNext()){
-                    Event event = (Event)songIterator.next();
-                    String chord = event.chord;
-                    if(chord.length() > 0 && !uniques.contains(chord)){
-                        uniques.add(chord);
-                    }
+            while (eventIterator.hasNext()) {
+                Event event = (Event) eventIterator.next();
+                String chord = event.chord;
+                if (chord.length() > 0 && !uniques.contains(chord)) {
+                    uniques.add(chord);
                 }
             }
         }
@@ -59,32 +46,12 @@ public class TabParser {
     }
 
 
-//    public static Instances fileToInstances(File file, Instances instances, ArrayList<Feature> features, int grade) {
-//
-//        double instanceData[] = new double[0];
-//
-//        for(Feature feature: features){
-//            double[] newData = feature.getFeatureData(new Song(file));
-//            instanceData = concatenate(instanceData,newData);
-//        }
-//
-//        // add grade
-//        double gradeData[] = new double[1];
-//
-//        gradeData[0] = grade<1 ? Utils.missingValue() : (grade-1);
-//
-//        instanceData = concatenate(instanceData, gradeData);
-//        instances.add(new DenseInstance(1.0, instanceData));
-//
-//        return instances;
-//    }
-
-    public static Instances songToInstances(Song song, Instances instances, ArrayList<Feature> features, int grade) {
+    public static Instances songToInstances(Song tab, Instances instances, ArrayList<Feature> features, char grade) {
 
         double instanceData[] = new double[0];
 
         for(Feature feature: features){
-            double[] newData = feature.getFeatureData(song);
+            double[] newData = feature.getFeatureData(tab);
             instanceData = concatenate(instanceData,newData);
         }
 
@@ -168,6 +135,12 @@ public class TabParser {
 //            instanceData = concatenate(instanceData, data);
 //        }
 
+=======
+            double[] newData = feature.getFeatureData(tab);
+            instanceData = this.concatenate(instanceData,newData);
+        }
+
+>>>>>>> Stashed changes
         // add grade
         double gradeData[] = new double[1];
 
@@ -279,11 +252,11 @@ public class TabParser {
 
     public static void main(String[] args) {
 
-        TabParser tabParser = new TabParser();
-
-        File testFolder = new File("resources/test");
-        ArrayList<String> uniques = tabParser.generateUniqueChords(testFolder, new ArrayList<>());
-        System.out.println("Hello");
+//        TabParser tabParser = new TabParser();
+//
+//        File testFolder = new File("resources/test");
+//        ArrayList<String> uniques = tabParser.generateUniqueChords(testFolder, new ArrayList<>());
+//        System.out.println("Hello");
 
         //myPackage.TabParser parse = new myPackage.TabParser();
         //ArrayList<myPackage.Bar> bars = parse.getBars(new File("resources/tab_files/grade1/1_Calleno.tab"));

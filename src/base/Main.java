@@ -3,7 +3,6 @@ package base;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
-import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -14,6 +13,7 @@ import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,14 +24,19 @@ public class Main{
     static File folder = new File("resources/tab_files");
 
     final static ArrayList<String> booleanValues = new ArrayList<String>(Arrays.asList(
+=======
+    static File folder = new File("resources/tab_files");
+    
+    TabParser parser = new TabParser();
+
+    final static ArrayList<String> booleanValues = new ArrayList<>(Arrays.asList(
+>>>>>>> Stashed changes
             "false","true"
     ));
-    final static ArrayList<String> grades = new ArrayList<String>(Arrays.asList(
+    final static ArrayList<String> grades = new ArrayList<>(Arrays.asList(
             "one","two","three","four","five","six","seven","eight"
     ));
 
-
-    // get file from classpath, resources folder
     private static void writeArffFile(String fileName, Instances instances) throws Exception {
         ArffSaver s= new ArffSaver();
         s.setInstances(instances); // Ignore warning about reflection
@@ -39,7 +44,6 @@ public class Main{
         s.writeBatch();
     }
 
-    // Load arff data into instances object
     public static Instances loadData(String filePath){
         Instances train;
         try{
@@ -52,7 +56,47 @@ public class Main{
         return train;
     }
 
+    public Instances folderToInstances(File folder, ArrayList<Feature> features,Instances instances){
+        /*
+         Take a folder of tab folders/files and traverse...
+         For each file it finds, create instance and add to instances
+        */
 
+        //Find grade from last character of folder name
+        char grade = folder.getName().charAt(folder.getName().length()-1);
+        System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
+
+        for(File file : folder.listFiles()){
+            if (file.isDirectory()) {
+                // recursive call on new found directory
+                folderToInstances(file, features, instances);
+            } else {
+                //write out feature vector for file, with grade from its folder
+                //System.out.println("    ->"+file.getName());
+                System.out.println("  "+file.getName());
+                instances = parser.addTabDataToInstances(new Song(file), instances, features, grade);
+            }
+        }
+
+        return instances;
+    }
+
+    public Instances folderToSongs(File folder, ArrayList<Feature> features,Instances instances){
+
+        char grade = folder.getName().charAt(folder.getName().length()-1);
+        System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
+
+        for(File file : folder.listFiles()){
+            if (file.isDirectory()) {
+                folderToSongs(file, features, instances);
+            } else {
+                System.out.println("  "+file.getName());
+                instances = parser.addTabDataToInstances(new Song(file), instances, features, grade);
+            }
+        }
+
+        return instances;
+    }
     private static ArrayList<Attribute> getAttributesForFeatureset(ArrayList<Feature> features){
         ArrayList<Attribute> attributes = new ArrayList<>();
 
@@ -122,14 +166,7 @@ public class Main{
         return instances;
     }
 
-    public static Instances folderToSectionInstances(File folder, ArrayList<Feature> features, Instances instances, int barsPerSection){
-        /*
-         Take a folder of tab folders/files and traverse...
-         For each file it finds, create instance and add to instances
-        */
-        //Find grade from last character of folder name
-        int grade = Character.getNumericValue(folder.getName().charAt(folder.getName().length()-1));
-        System.out.println("PROCESSING "+folder.getName()+" FOLDER....");
+        attributes.add(new Attribute("grade", grades));
 
         for(File file : folder.listFiles()){
             if (file.isDirectory()) {
@@ -159,6 +196,7 @@ public class Main{
         String instances_name = features_names(features);
 
         Instances instances = new Instances(instances_name,attributes,0);
+        instances = folderToInstances(file, features, instances);
 
         instances = TabParser.songToInstances(song, instances, features, 0);
 
@@ -169,13 +207,7 @@ public class Main{
 
         // #################################################################
 
-        String instances_name = features_names(features);
-
-        Instances instances = new Instances(instances_name,attributes,0);
-
-        instances = TabParser.songToInstances(new Song(file), instances, features, 0);
-
-        return Main.songToInstance(new Song(file), features);
+        return instances;
     }
 
     public static String features_names(ArrayList<Feature> features) {
@@ -185,55 +217,6 @@ public class Main{
             out += "_";
         }
         return out;
-    }
-
-    public static double classifyTab(Classifier classifier, ArrayList<Feature> features, File file){
-
-        //Main.attributes = getAttributesForFeatureset(features);
-        Instances instances = new Instances(features_names(features),Main.attributes,0);
-        instances = Main.folderToInstances(folder,features,instances);
-
-        instances.setClassIndex(1);
-        //instances.setClass(instances.attribute("grade"));
-
-        try{
-            classifier.buildClassifier(instances);
-            double grade = classifier.classifyInstance(fileToInstance(file,features));
-            return grade + 1.0;
-        }catch (Exception e){
-            e.printStackTrace();
-            return -1;
-        }
-
-
-    }
-
-    public static void manualTestDebug(Classifier classifier, Instances instances) {
-        try {
-            instances.setClassIndex(instances.numAttributes()-1);
-            classifier.buildClassifier(instances);
-            for (Instance instance : instances) {
-                double dist[] = classifier.distributionForInstance(instance);
-                for (double d : dist) System.out.print(d + ",");
-                System.out.println();
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    public static Instances[] splitData(Instances all, double proportion){
-
-        Instances split[] = new Instances[2];
-        int totalInstances = all.numInstances();
-
-        int splitAt = (int) (proportion*totalInstances);
-
-        all.randomize(new Random());
-        split[0] = new Instances(all, 0, splitAt);
-        split[1] = new Instances(all, splitAt, totalInstances-splitAt);
-
-        return split;
     }
 
     public static void main(String[] args) {
@@ -248,22 +231,8 @@ public class Main{
                         new ChordExists()
                 ));
 
-        // Get attributes
-        Main.attributes = getAttributesForFeatureset(features);
-        Main.attributes.add(new Attribute("grade", grades));
+        Instances instances = Main.getInstances(folder,features);
 
-        // Get instances
-        Instances instances = new Instances(features_names(features),Main.attributes,0);
-        instances = Main.folderToSectionInstances(folder,features, instances,3);
-        //instances = Main.folderToInstances(folder,features, instances);
-
-
-        Instances split[] = splitData(instances, 0.5);
-        split[0].setClassIndex(split[0].numAttributes() - 1);
-        split[1].setClassIndex(split[1].numAttributes() - 1);
-
-
-        NaiveBayes nb = new NaiveBayes();
         try{
             nb.buildClassifier(split[0]);
             System.out.println(getAccuracy(evaluate(new NaiveBayes(), instances)));
