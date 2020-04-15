@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="635a7edf-c70d-4fda-9a63-2d7ee1d42a21" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/FretCounts.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/FretExists.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/LargestFretStretch.class" afterDir="false" />
@@ -23,12 +24,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Bar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Features.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/TabParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/TabParser.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
@@ -115,6 +118,8 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="FindInProjectRecents">
     <findStrings>
       <find>main</find>
@@ -133,6 +138,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< Updated upstream
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -184,6 +190,20 @@
         </subPane>
       </pane>
     </panes>
+=======
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZysaYMlAW8edJzFt4xSCMPc1TG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+>>>>>>> Stashed changes
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -201,18 +221,6 @@
       <recent name="C:\Users\jezba\Desktop\TabClassifier\Tab_Classification\resources" />
       <recent name="C:\Users\jezba\Desktop\Dissertation\src\base" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -258,6 +266,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< Updated upstream
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
@@ -288,15 +297,38 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+=======
+  <component name="WindowStateProjectService">
+    <state x="542" y="324" key="com.intellij.ide.util.TipDialog" timestamp="1586940106225">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="542" y="324" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586940106225" />
+>>>>>>> Stashed changes
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/src/base/Song.java</url>
           <line>134</line>
           <properties />
           <option name="timeStamp" value="82" />
+=======
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="39" />
+>>>>>>> Stashed changes
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -306,6 +338,7 @@
       </configuration>
     </watches-manager>
   </component>
+<<<<<<< Updated upstream
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/calleno.tab">
       <provider selected="true" editor-type-id="text-editor" />
@@ -473,6 +506,8 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">

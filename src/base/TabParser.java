@@ -17,7 +17,7 @@ public class TabParser {
 
     final static HashSet<String> uniques = new HashSet<>();
 
-    private double[] concatenate(double a[], double b[]) {
+    static double[] concatenate(double a[], double b[]) {
         int aLen = a.length;
         int bLen = b.length;
 
