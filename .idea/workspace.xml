@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="635a7edf-c70d-4fda-9a63-2d7ee1d42a21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/FretCounts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/FretExists.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/LargestFretStretch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/LargestStringStretch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/RythymChanges.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Dissertation/base/w.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/test.tab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HighestFret_.arff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chordCounts_.arff" afterDir="false" />
+    <list default="true" id="3ce887d4-2b49-4311-bf9c-068dcff13b74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/ChordCounts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/ChordCounts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/ChordExists.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/ChordExists.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/HighestFret.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/HighestFret.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/HighestFret_.arff" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/NumberUniqueChords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/NumberUniqueChords.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Song$BarIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Song$BarIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Song$EventIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Song$EventIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Song.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Features.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/chordCounts_.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HighestFret_.arff" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/TabParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/TabParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chordCounts_.arff" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,116 +18,15 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/base/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="257" column="73" lean-forward="true" selection-start-line="257" selection-start-column="73" selection-end-line="257" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/base/Features.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="201" column="46" selection-start-line="201" selection-start-column="46" selection-end-line="201" selection-end-column="46" />
-              <folding>
-                <element signature="method#getAttributes#0;class#ChordCounts#0" />
-                <element signature="class#ChordExists#0" />
-                <element signature="method#getAttributes#0;class#ChordExists#0" />
-                <element signature="method#getFeatureData#0;class#ChordExists#0" />
-                <element signature="class#FretCounts#0" />
-                <element signature="method#getFeatureData#0;class#FretCounts#0" />
-                <element signature="method#getFeatureData#0;class#NumberUniqueChords#0" />
-                <element signature="class#HighestFret#0" />
-                <element signature="method#getAttributes#0;class#HighestFret#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="151" column="17" lean-forward="true" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
-              <folding>
-                <element signature="method#concatenate#0;class#TabParser#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/base/Song.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-              <folding>
-                <element signature="e#3998#3999#0" expanded="true" />
-                <element signature="e#4038#4039#0" expanded="true" />
-                <element signature="class#BarIterator#0;class#Song#0" />
-                <element signature="e#4392#4393#0" expanded="true" />
-                <element signature="e#4434#4435#0" expanded="true" />
-                <element signature="class#EventIterator#0;class#Song#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/base/Bar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="e#267#268#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>main</find>
-      <find>n</find>
-      <find>e</find>
-      <find>f</find>
-      <find>h</find>
-      <find>g</find>
-      <find>i</find>
-      <find>getEvents</find>
-      <find>getBars</find>
-      <find>grade</find>
-      <find>Fret</find>
-    </findStrings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/base/Feature.java" />
-        <option value="$PROJECT_DIR$/src/chordCounts_chordExists_.arff" />
-        <option value="$PROJECT_DIR$/src/base/Event.java" />
-        <option value="$PROJECT_DIR$/resources/test.tab" />
-        <option value="$PROJECT_DIR$/src/base/Features.java" />
-        <option value="$PROJECT_DIR$/src/base/TabParser.java" />
-        <option value="$PROJECT_DIR$/src/base/Bar.java" />
-        <option value="$PROJECT_DIR$/src/base/Song.java" />
-        <option value="$PROJECT_DIR$/src/base/Main.java" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="495" />
@@ -154,36 +34,10 @@
     <option name="width" value="1440" />
     <option name="height" value="775" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tab_Classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tab_Classification" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -201,18 +55,6 @@
       <recent name="C:\Users\jezba\Desktop\TabClassifier\Tab_Classification\resources" />
       <recent name="C:\Users\jezba\Desktop\Dissertation\src\base" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -258,220 +100,34 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84388185" visible="true" weight="0.13154362" />
-      <window_info id="Structure" order="1" sideWeight="0.15611814" side_tool="true" weight="0.12348993" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4206799" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.407932" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586948021731">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021731" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586948021731">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021731" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586948021730">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021730" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1586948021782">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021782" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586941381097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586941381097" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/base/Song.java</url>
-          <line>134</line>
-          <properties />
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="TabParser.uniques" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/calleno.tab">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade5/16_pavan.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Feature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chordExists_.arff" />
-    <entry file="file://$PROJECT_DIR$/src/chordCounts_chordExists_.arff" />
-    <entry file="file://$PROJECT_DIR$/src/NumUniqueChords_.arff" />
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade3/lesson_15_neusidler_800px.jpg" />
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade7/33_mr_langtons_galliard.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="476" column="7" selection-start-line="476" selection-start-column="7" selection-end-line="476" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade2/7_SellingersRound.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/3_TheBagpipes.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade2/6_EinGuterHofftantz.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="139" column="1" selection-start-line="139" selection-end-line="139" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade2/29_Trenchmore.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade2/2_UnserKoechinKanAussDerMassenKochenWol.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/tab_files/grade1/1_Calleno.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" column="3" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/test.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HighestFret_.arff">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chordCounts_.arff">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="1344" column="29" selection-start-line="1344" selection-start-column="29" selection-end-line="1344" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../MachineLearningCW/LinearPerceptron/src/com/company/WekaTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Bar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Song.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-          <folding>
-            <element signature="e#3998#3999#0" expanded="true" />
-            <element signature="e#4038#4039#0" expanded="true" />
-            <element signature="class#BarIterator#0;class#Song#0" />
-            <element signature="e#4392#4393#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="class#EventIterator#0;class#Song#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Features.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="201" column="46" selection-start-line="201" selection-start-column="46" selection-end-line="201" selection-end-column="46" />
-          <folding>
-            <element signature="method#getAttributes#0;class#ChordCounts#0" />
-            <element signature="class#ChordExists#0" />
-            <element signature="method#getAttributes#0;class#ChordExists#0" />
-            <element signature="method#getFeatureData#0;class#ChordExists#0" />
-            <element signature="class#FretCounts#0" />
-            <element signature="method#getFeatureData#0;class#FretCounts#0" />
-            <element signature="method#getFeatureData#0;class#NumberUniqueChords#0" />
-            <element signature="class#HighestFret#0" />
-            <element signature="method#getAttributes#0;class#HighestFret#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/TabParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="151" column="17" lean-forward="true" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
-          <folding>
-            <element signature="method#concatenate#0;class#TabParser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="257" column="73" lean-forward="true" selection-start-line="257" selection-start-column="73" selection-end-line="257" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

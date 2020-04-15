@@ -86,11 +86,38 @@ public class Main{
         return accuracy;
     }
 
+    public static double balancedAccuracy(Classifier c, Instances test) throws Exception{
+        // Accounts for the numerical/linear properties of the categorical class (grades 1-8)
+        // predicting 1 grade off is considered ok, predicting 7 grades of is bad
+        double[][] lossMatrix = new double[][]{
+                {  0,   0.2,    0.8,      1,     1,     1,     1,     1},
+                {0.2,     0,    0.2,    0.8,     1,     1,     1,     1},
+                {0.8,   0.2,    0.0,    0.2,   0.8,     1,     1,     1},
+                {  1,   0.8,    0.2,      0,   0.2,   0.8,     1,     1},
+                {  1,     1,    0.8,    0.2,   0.0,   0.2,   0.8,     1},
+                {  1,     1,      1,    0.8,   0.2,     0,   0.2,   0.8},
+                {  1,     1,      1,      1,   0.8,   0.2,     0,   0.2},
+                {  1,     1,      1,      1,     1,    0.8,  0.2,     0}
+        };
+
+        double totalScore = 0.0;
+        for(Instance i: test){
+            int y = (int)i.classValue(); // actual value
+            int pred = (int)c.classifyInstance(i); // predicted value
+
+            double score = 1;
+            score = score - lossMatrix[y][pred];
+            totalScore += score;
+
+        }
+        return totalScore/test.numInstances();
+    }
+
     public static double testAccuracy(Classifier c, Instances test) throws Exception {
         int correct = 0;
         for(Instance i: test){
-            double pred = c.classifyInstance(i);
             double y = i.classValue();
+            double pred = c.classifyInstance(i);
             if(pred == y){
                 correct++;
             }
@@ -245,7 +272,7 @@ public class Main{
         features.addAll(
                 Arrays.asList(
                         //new NumberUniqueChords(),
-                        new ChordExists()
+                        new NumberUniqueChords()
                 ));
 
         // Get attributes
@@ -265,25 +292,16 @@ public class Main{
 
         NaiveBayes nb = new NaiveBayes();
         try{
+            //writeArffFile(instances.relationName(),instances);
             nb.buildClassifier(split[0]);
             System.out.println(getAccuracy(evaluate(new NaiveBayes(), instances)));
+            System.out.println(testAccuracy(nb,instances));
+            System.out.println(balancedAccuracy(nb, instances));
 
         }catch (Exception e){
             e.printStackTrace();
         }
-        //System.out.println(getAccuracy(evaluate(new NaiveBayes(), instances)));
-        //manualTestDebug(new NaiveBayes(),instances);
 
-        //double mat[][] = evaluate(new NaiveBayes(), instances).confusionMatrix();
-
-//        double grade = classifyTab(new NaiveBayes(), features, testFile);
-//        System.out.println("GRADE: "+grade);
-
-//        try{
-//            writeArffFile(features_names(features),instances);
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
         System.out.println();
     }
 }
