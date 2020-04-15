@@ -2,6 +2,7 @@ package base;
 
 import weka.core.Attribute;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 class ChordCounts implements Feature{
@@ -103,6 +104,88 @@ class ChordExists implements Feature{
 
 }
 
+class FretCounts implements Feature{
+
+    @Override
+    public String getName() {
+        return "fretCounts";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        ArrayList<Attribute> fretAttributes = new ArrayList<>();
+        for(int c=(int)'b'; c<=(int)'p'; c++){
+            fretAttributes.add(new Attribute("fret_"+(char)c+"_count"));
+        }
+        return fretAttributes;
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        HashMap<Character,Integer> counts = new HashMap<>(15); // Copy uniques hashmap, to use for keeping track of whats seen
+        Iterator<Event> iterator = song.getEventIterator();
+
+        while(iterator.hasNext()) { //While song has another event/chord
+            Event event = iterator.next();
+
+            for(char c: event.chord.toCharArray()){
+                if(counts.containsKey(c)){ //If chord is known chord
+                    // Set value to 1, to indicate its been found already
+                    if(counts.get(c)==0) counts.replace(c,0,1);
+                }
+            }
+
+        }
+
+        double[] dataOut = new double[counts.size()]; // create new empty double array to return
+        int index = 0;
+
+        Iterator it = counts.keySet().iterator();
+        while(it.hasNext()){
+            Object chord = it.next();
+            dataOut[index++]=counts.get(chord);
+        }
+
+        return dataOut;
+    }
+}
+
+class FretExists implements Feature{
+
+    @Override
+    public String getName() {
+        return "fretExists";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        ArrayList<Attribute> fretAttributes = new ArrayList<>();
+        for(int c=(int)'b'; c<=(int)'p'; c++){
+            fretAttributes.add(new Attribute("fret_"+(char)c+"_exists",Main.booleanValues));
+        }
+        return fretAttributes;
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        double dataOut[] = new double[15]; // Copy uniques hashmap, to use for keeping track of whats seen
+        Iterator<Event> iterator = song.getEventIterator();
+
+        while(iterator.hasNext()) { //While song has another event/chord
+            Event event = iterator.next();
+
+            for(char c: event.chord.toCharArray()) {
+                if(c != ' ' && c != 'a') {
+                    dataOut[(int)(c)-98] = 1.0;
+                }
+            }
+
+        }
+
+        return dataOut;
+    }
+}
+
 class NumberUniqueChords implements Feature{
 
     @Override
@@ -167,5 +250,111 @@ class HighestFret implements Feature{
         }
 
         return new double[]{highestFret - 97}; // -97 so 'b' (first fret) is 1 and not 98 (character value)
+    }
+}
+
+
+// TODO following features...
+
+class LargestFretStretch implements Feature{
+
+    @Override
+    public String getName() {
+        return "LargestFretStretch";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return new ArrayList<Attribute>(Arrays.asList(new Attribute("LargestFretStretch")));
+
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+
+        int largestStretch = 0;
+        Iterator<Event> songIterator = song.getEventIterator();
+
+        while(songIterator.hasNext()) {
+            String chord = songIterator.next().chord;
+            int lowestFret = Integer.MAX_VALUE;
+            int highestFret = 0;
+
+            for (char c : chord.toCharArray()) {
+
+                // ignore non-played and open notes
+                if (c == ' ' || c == 'a') continue;
+
+                int fret = c;
+                if (fret < lowestFret) {
+                    lowestFret = fret;
+                }
+                if (fret > highestFret) {
+                    highestFret = fret;
+                }
+            }
+
+            int stretch = highestFret - lowestFret;
+            if (stretch > largestStretch) {
+                largestStretch = stretch;
+            }
+        }
+
+
+        return new double[]{largestStretch};
+    }
+}
+
+class LargestStringStretch implements Feature{
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return null;
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        return new double[0];
+    }
+}
+
+class RythymChanges implements Feature{
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return null;
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        return new double[0];
+    }
+}
+
+class w implements Feature{
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return null;
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        return new double[0];
     }
 }

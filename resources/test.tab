@@ -1,0 +1,34 @@
+{\CL/ TEST}
+
+% chords
+b
+S3
+1a
+2 b
+1c
+2  d
+xe f g
+
+% frets
+b
+2abcde
+1.fghij
+xklmnop
+
+% fret stretch
+b
+1aa
+2ab
+1bc
+xbp
+
+% string stretch
+b
+1a
+2a b
+1 a b c
+x a  b c
+x  a  b  c
+
+e
+

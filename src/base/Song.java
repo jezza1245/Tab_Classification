@@ -52,6 +52,9 @@ public class Song {
 
                 //e -> END OF FILE
                 else if(line.startsWith("e")) {
+                    if(bar.size() != 0) {
+                        bars.add(bar);
+                    }
                     break;
                 }
 
@@ -71,14 +74,12 @@ public class Song {
                 else if(line.startsWith("b") || line.startsWith("B")) {
 
                     // If first barline before
-                    if(!firstBarLine){
+                    if(!firstBarLine && bar.size() != 0){
                         bars.add(bar);
                     }else{
                         firstBarLine = false;
                     }
                     bar = new Bar();
-
-
                     line = br.readLine();
                     continue;
                 }
@@ -106,6 +107,7 @@ public class Song {
 
                 line = br.readLine();
             }
+
         }catch(Exception e){
             System.out.println("ERROR PARSING TAB");
         }
@@ -113,6 +115,25 @@ public class Song {
     }
 
     public void addBar(Bar bar){ bars.add(bar); }
+
+    public ArrayList<Song> getSections(int barsInAGroup){
+
+        ArrayList<Song> sections = new ArrayList<>();
+        ArrayList<Bar> section;
+
+        for(int i=0; i< bars.size()-2; i++) {
+
+            section = new ArrayList<>();
+            for (int j = 0; (j < barsInAGroup && (i+j)<bars.size() ); j++) {
+
+                section.add(bars.get(i+j));
+
+            }
+            sections.add(new Song(section));
+        }
+
+        return sections;
+    }
 
 
     public Iterator<Bar> getBarIterator(){
