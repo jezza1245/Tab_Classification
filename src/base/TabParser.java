@@ -14,7 +14,7 @@ import java.util.Iterator;
 
 public class TabParser {
 
-    final static HashMap<String,Integer> uniques = new HashMap<>();
+    public static HashMap<String,Integer> uniques = new HashMap<>();
 
     static
     {
@@ -57,7 +57,20 @@ public class TabParser {
 
         return uniques;
     }
+    public static void rebuildUniqueChords(ArrayList<Song> songs){
+        uniques = new HashMap<>();
+        for(Song song: songs){
+            Iterator songIterator = song.getEventIterator();
 
+            while(songIterator.hasNext()){
+                Event event = (Event)songIterator.next();
+                String chord = event.chord;
+                if(chord.length() > 0 && !uniques.containsKey(chord)){
+                    uniques.put(chord,0);
+                }
+            }
+        }
+    }
 
 //    public static Instances fileToInstances(File file, Instances instances, ArrayList<Feature> features, int grade) {
 //

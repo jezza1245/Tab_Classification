@@ -6,12 +6,12 @@ import java.util.Arrays;
 public class Event {
 
     // These parts make up the rhythm information of an event
-    private ArrayList<String> rhythmFlags = new ArrayList<String>(
+    static ArrayList<String> rhythmFlags = new ArrayList<String>(
             Arrays.asList("B","W","w","0","1","2","3","4","5","L","x")
     );
 
     // These parts make up the chord information of an event
-    private char[] chordValues = {' ','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
+    static char[] chordValues = {' ','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
 
     public String rhythmIndicator = "x"; // Rhythm flag/indicator displayed (if empty, same as previous note/event)
     //public char duration; // Directly related to rhythm indicator however contains the duration of the event

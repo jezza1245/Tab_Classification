@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Song {
-
+    public String name = "untitled";
     private ArrayList<Bar> bars;
-
+    private int grade = -1;
     public Song(){
         this.bars = new ArrayList<>();
     }
@@ -40,6 +40,7 @@ public class Song {
 
                 // { -> Printed title information
                 else if(line.startsWith("{")){
+                    line.substring(1,line.length()-1);; //.replaceAll("}"," ").trim();
                     line = br.readLine();
                     continue;
                 }
@@ -114,6 +115,131 @@ public class Song {
 
     }
 
+    public Song(File file, int grade){
+        this.grade = grade;
+        bars = new ArrayList<>();
+
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file));
+
+            /*
+                Process header information such as title and style data
+                (probably not useful)
+            */
+            String line = br.readLine();
+            //WHILE can get a line
+            Bar bar = null;
+            boolean firstBarLine = true;
+            while(line!=null){
+                // ############## Miscellanous #################
+
+                // $ -> styling option
+                if(line.startsWith("$")){
+                    line = br.readLine();
+                    continue;                }
+
+                // { -> Printed title information
+                else if(line.startsWith("{")){
+                    this.name = line.substring(1,line.length()-1);; //.replaceAll("}"," ").trim();
+                    line = br.readLine();
+                    continue;
+                }
+
+                //EMPTY LINE -> NEW TAB LINE
+                if(line.length()==0) {
+                    line = br.readLine();
+                    continue;
+                }
+
+                //e -> END OF FILE
+                else if(line.startsWith("e")) {
+                    if(bar.size() != 0) {
+                        bars.add(bar);
+                    }
+                    break;
+                }
+
+                //% -> COMMENT
+                else if(line.startsWith("%")) {
+                    line = br.readLine();
+                    continue;
+                }
+
+                //. -> Column of dots
+                else if(line.startsWith(".")) {
+                    if(line.contains("b")){
+                        // If first barline before
+                        if(!firstBarLine && bar.size() != 0){
+                            bars.add(bar);
+                        }else{
+                            firstBarLine = false;
+                        }
+                        bar = new Bar();
+
+                    }
+
+                    line = br.readLine();
+                    continue;
+                }
+
+                //. -> Styleflag
+                else if(line.startsWith("-")) {
+                    line = br.readLine();
+                    continue;
+                }
+
+                //b or B -> bar
+                else if(line.startsWith("b") || line.startsWith("B")) {
+
+                    // If first barline before
+                    if(!firstBarLine && bar.size() != 0){
+                        bars.add(bar);
+                    }else{
+                        firstBarLine = false;
+                    }
+                    bar = new Bar();
+                    line = br.readLine();
+                    continue;
+                }
+
+                //Time Signature (C,c,Sx-y)
+                else if(line.startsWith("C") || line.startsWith("c") || line.startsWith("S")) {
+                    line = br.readLine();
+                    continue;
+                }
+
+                // indent
+                else if(line.startsWith("i")){
+                    line = br.readLine();
+                    continue;
+                }
+                // ################################################################################################
+
+                Event event = new Event(line);
+                // If no initial barline was sed (eg starting with notes before a barline)
+                if (bar==null) {
+                    firstBarLine = false; // Let system know
+                    bar = new Bar();
+                }
+                bar.addEvent(event);
+
+                line = br.readLine();
+            }
+
+        }catch(Exception e){
+            System.out.println("ERROR PARSING TAB");
+        }
+
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
     public void addBar(Bar bar){ bars.add(bar); }
 
     public ArrayList<Song> getSections(int barsInAGroup){
@@ -121,7 +247,7 @@ public class Song {
         ArrayList<Song> sections = new ArrayList<>();
         ArrayList<Bar> section;
 
-        for(int i=0; i< bars.size()-2; i++) {
+        for(int i=0; i <= bars.size()-barsInAGroup; i++) {
 
             section = new ArrayList<>();
             for (int j = 0; (j < barsInAGroup && (i+j)<bars.size() ); j++) {

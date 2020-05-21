@@ -77,77 +77,32 @@ class ChordExists implements Feature{
     @Override
     public double[] getFeatureData(Song song) {
 
-        HashMap<String,Integer> counts = TabParser.uniques; // Copy uniques hashmap, to use for keeping track of whats seen
+        HashMap<String,Integer> counts = (HashMap<String,Integer>)TabParser.uniques.clone(); // Copy uniques hashmap, to use for keeping track of whats seen
         Iterator<Event> iterator = song.getEventIterator();
+        double[] dataOut = new double[counts.size()]; // create new empty double array to return
 
         while(iterator.hasNext()) { //While song has another event/chord
+
             Event event = iterator.next();
             if(counts.containsKey(event.chord)){ //If chord is known chord
-
                 // Set value to 1, to indicate its been found already
                 if(counts.get(event.chord)==0) counts.replace(event.chord,0,1);
             }
         }
 
-        double[] dataOut = new double[counts.size()]; // create new empty double array to return
-        int index = 0;
 
         Iterator it = counts.keySet().iterator();
+        int index = 0;
         while(it.hasNext()){
             Object chord = it.next();
-            dataOut[index++]=counts.get(chord);
+            dataOut[index]=counts.get(chord);
+            index++;
         }
 
         return dataOut;
 
     }
 
-}
-
-class FretCounts implements Feature{
-
-    @Override
-    public String getName() {
-        return "fretCounts";
-    }
-
-    @Override
-    public ArrayList<Attribute> getAttributes() {
-        ArrayList<Attribute> fretAttributes = new ArrayList<>();
-        for(int c=(int)'b'; c<=(int)'p'; c++){
-            fretAttributes.add(new Attribute("fret_"+(char)c+"_count"));
-        }
-        return fretAttributes;
-    }
-
-    @Override
-    public double[] getFeatureData(Song song) {
-        HashMap<Character,Integer> counts = new HashMap<>(15); // Copy uniques hashmap, to use for keeping track of whats seen
-        Iterator<Event> iterator = song.getEventIterator();
-
-        while(iterator.hasNext()) { //While song has another event/chord
-            Event event = iterator.next();
-
-            for(char c: event.chord.toCharArray()){
-                if(counts.containsKey(c)){ //If chord is known chord
-                    // Set value to 1, to indicate its been found already
-                    if(counts.get(c)==0) counts.replace(c,0,1);
-                }
-            }
-
-        }
-
-        double[] dataOut = new double[counts.size()]; // create new empty double array to return
-        int index = 0;
-
-        Iterator it = counts.keySet().iterator();
-        while(it.hasNext()){
-            Object chord = it.next();
-            dataOut[index++]=counts.get(chord);
-        }
-
-        return dataOut;
-    }
 }
 
 class FretExists implements Feature{
@@ -253,6 +208,87 @@ class HighestFret implements Feature{
     }
 }
 
+class LargestNumStringSkips implements Feature{
+
+    @Override
+    public String getName() {
+        return "LargestNumStringSkips";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return new ArrayList<Attribute>(Arrays.asList(new Attribute("LargestNumStringSkips")));
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        int largestNumSkips = 0;
+        Iterator barIterator = song.getBarIterator();
+        while(barIterator.hasNext()){
+            ArrayList<Event> events = ((Bar)barIterator.next()).getEvents();
+            for (Event event : events) {
+                String chord = event.chord.trim();
+                int skips = 0;
+
+                boolean runningSkip = false;
+                char[] notes = chord.toCharArray();
+                for(int i=0; i<notes.length; i++){
+                    if(notes[i] == ' ') {
+                        if (runningSkip == false) {
+                            skips++;
+                            runningSkip = true;
+                        }
+                    }else{
+                        runningSkip = false;
+                    }
+
+                }
+
+                if (skips > largestNumSkips) largestNumSkips = skips;
+            }
+        }
+        return new double[]{largestNumSkips};
+    }
+}
+
+class LargestSingleStringSkip implements Feature{
+
+    @Override
+    public String getName() {
+        return "LargestSingleStringSkip";
+    }
+
+    @Override
+    public ArrayList<Attribute> getAttributes() {
+        return new ArrayList<Attribute>(Arrays.asList(new Attribute("LargestSingleStringSkip")));
+    }
+
+    @Override
+    public double[] getFeatureData(Song song) {
+        int largestSkip = 0;
+        Iterator barIterator = song.getBarIterator();
+        while(barIterator.hasNext()){
+            ArrayList<Event> events = ((Bar)barIterator.next()).getEvents();
+            for (Event event : events) {
+                String chord = event.chord.trim();
+                int skips = 0;
+                boolean skipStarted = false;
+                char[] notes = chord.toCharArray();
+                for(int i=0; i<notes.length; i++){
+                    if(notes[i] == ' ') {
+                        skips++;
+                    }else if(skipStarted){
+                        break;
+                    }
+                }
+
+                if (skips > largestSkip) largestSkip = skips;
+            }
+        }
+        return new double[]{largestSkip};
+    }
+}
+
 
 // TODO following features...
 
@@ -305,23 +341,7 @@ class LargestFretStretch implements Feature{
     }
 }
 
-class LargestStringStretch implements Feature{
 
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public ArrayList<Attribute> getAttributes() {
-        return null;
-    }
-
-    @Override
-    public double[] getFeatureData(Song song) {
-        return new double[0];
-    }
-}
 
 class RythymChanges implements Feature{
 

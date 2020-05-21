@@ -3,12 +3,71 @@
   <component name="ChangeListManager">
     <list default="true" id="3ce887d4-2b49-4311-bf9c-068dcff13b74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/HighestFret_.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/ChordExists.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/ChordExists.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/FretCounts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/FretExists.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/FretExists.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/HighestFret.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/HighestFret.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/LargestFretStretch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/LargestFretStretch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/LargestStringStretch.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/chordCounts_.arff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HighestFret_.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/NumberUniqueChords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/NumberUniqueChords.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/RythymChanges.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/RythymChanges.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Song$BarIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Song$BarIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Song$EventIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Song$EventIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/TabParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dissertation/base/w.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dissertation/base/w.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade1/1_Calleno.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade1/3_TheBagpipes.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade1/5_TheMotlye.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade1/calleno.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade1/the_bagpipes.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade1/the_owld_man.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/11_RobinReddocke.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/1_HastuMichGenumen.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/29_Trenchmore.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/2_UnserKoechinKanAussDerMassenKochenWol.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/33_LightlieLoveLadies.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/35_TheEarleOfDarbyesCaraunta - Copy.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/6_EinGuterHofftantz.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/7_SellingersRound.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade2/9_TheBlacksmith.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/13_Larouse.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/15_BellaGioiosa.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/17_Baloo.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/19_PasseVelours.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/21_ElsleinLiebstesElsleinMein.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/21_IlControDell'Orco.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/23_PassamezzoD'Italie.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/25_QuadroPavinGaliard.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/31_ElBataino.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/37_BlameNotMyLute.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/39_TienteAlora.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/41_TuAnderaiColBocchalon.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/45_TantarraChromartello.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/47_CansonEnglesa.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/49_GreeneSleves.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/51_AGalliard.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/53_WillYeGoWalkeTheWoodSoWilde.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade3/79_what_if_a_day.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade3/79_what_if_a_day.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade4/27_TheDivisionOfRogeroBefore.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade4/43_LaCastalda.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade4/56_mrs_whites_nothing.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade4/56_mrs_whites_nothing.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade4/99_midnight.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade4/99_midnight.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade5/32_mrs_vaux_galliard.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade5/32_mrs_vaux_galliard.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade5/77_mrs_norrishes_delight.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade5/77_mrs_norrishes_delight.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade6/24_awake_sweet_love_galliard.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade6/24_awake_sweet_love_galliard.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade6/82_galliard.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade6/82_galliard.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade7/14_john_langtons_pavan.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade7/14_john_langtons_pavan.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade7/54_lady_hunsdons_puff.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade7/54_lady_hunsdons_puff.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade8/14a_langton_pavane.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade8/14a_langton_pavane.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tab_files/grade8/71_fantasy.tab" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test_files/grade8/71_fantasy.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Features.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chordCounts_.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/TabParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/TabParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,30 +87,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="495" />
-    <option name="y" value="-25" />
-    <option name="width" value="1440" />
-    <option name="height" value="775" />
-  </component>
+  <component name="ProjectId" id="1aam2cOV9BE95XEUI9yFcss7lBv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FeatureSpace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/test_files/grade8" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jezba\Desktop\TabClassifier\Tab_Classification\resources\tab_files" />
-      <recent name="C:\Users\jezba\Desktop\Dissertation\src" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files\grade1" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files\grade2" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files\grade3" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files\grade4" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files\grade5" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files\grade8" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources\test_files" />
+      <recent name="C:\Users\jezba\Documents\Work\Tab_Classification\resources" />
       <recent name="C:\Users\jezba\Desktop\TabClassifier\Tab_Classification\resources" />
       <recent name="C:\Users\jezba\Desktop\Dissertation\src\base" />
     </key>
@@ -92,7 +153,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="635a7edf-c70d-4fda-9a63-2d7ee1d42a21" name="Default Changelist" comment="" />
+      <changelist id="3ce887d4-2b49-4311-bf9c-068dcff13b74" name="Default Changelist" comment="" />
       <created>1583669532402</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -101,28 +162,77 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586948021731">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589633109228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021731" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586948021731">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1589633109228" />
+    <state x="552" y="178" key="#newData" timestamp="1589634121311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021731" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586948021730">
+    <state x="552" y="178" key="#newData/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1589634121311" />
+    <state x="866" y="273" key="#xdebugger.XInspectDialog" timestamp="1589634147975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021730" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1586948021782">
+    <state x="866" y="273" key="#xdebugger.XInspectDialog/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1589634147975" />
+    <state width="1877" height="335" key="GridCell.Tab.0.bottom" timestamp="1590066323862">
+      <screen x="1920" y="207" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870896464" />
+    <state width="1877" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1590064428311" />
+    <state width="1877" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.207.1920.1040@1920.207.1920.1040" timestamp="1590066323862" />
+    <state width="1877" height="335" key="GridCell.Tab.0.center" timestamp="1590066323862">
+      <screen x="1920" y="207" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="288" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870896464" />
+    <state width="1877" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1590064428311" />
+    <state width="1877" height="335" key="GridCell.Tab.0.center/0.0.1920.1040/1920.207.1920.1040@1920.207.1920.1040" timestamp="1590066323862" />
+    <state width="1877" height="335" key="GridCell.Tab.0.left" timestamp="1590066323862">
+      <screen x="1920" y="207" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="288" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870896464" />
+    <state width="1877" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1590064428311" />
+    <state width="1877" height="335" key="GridCell.Tab.0.left/0.0.1920.1040/1920.207.1920.1040@1920.207.1920.1040" timestamp="1590066323862" />
+    <state width="1877" height="335" key="GridCell.Tab.0.right" timestamp="1590066323862">
+      <screen x="1920" y="207" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="288" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588870896464" />
+    <state width="1877" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1590064428311" />
+    <state width="1877" height="335" key="GridCell.Tab.0.right/0.0.1920.1040/1920.207.1920.1040@1920.207.1920.1040" timestamp="1590066323862" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1589633467222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586948021782" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586941381097">
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1589633467222" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1590048488346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586941381097" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588837095778" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.207.1920.1040@0.0.1920.1040" timestamp="1590048488346" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Main.java</url>
+          <line>504</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Features.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Main.java</url>
+          <line>379</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/base/Main.java</url>
+          <line>430</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="TabParser.uniques" />
